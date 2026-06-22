@@ -53,10 +53,11 @@ Below is the list of undergraduate mechanical engineering students who designed,
 
 | Student Name | Hall Ticket Number | Department/Section | Role & Key Contributions |
 | :--- | :--- | :--- | :--- |
-| **Mohammed Zainul Abedin Kaleemi** | 1604-24-736-041 | Mechanical Engineering | Team Lead, CAD Design, and System Architecture. |
-| **Mohammed Qubaib** | 1604-24-736-017 | Mechanical Engineering | Structural Steel Fabrication, FEA Stress Simulation, and Analysis. |
-| **Mohammed Muzzammil** | 1604-24-735-026 | Mechanical Engineering | Edge ML Pipeline Deployment, Arduino Motor Logic, and Control. |
-| **Syed Faisal** | 1604-24-736-039 | Mechanical Engineering | Power Supply Systems, Sensor Calibration, and Field Testing. |
+| **Syed Murtaza Ahmed** | 1604-24-736-017 | Mechanical Engineering | Principal System Architect: End-to-end electrical design, control software development, and edge ML pipeline integration. |
+| **Mohammed Zainul Abedin Kaleemi** | 1604-24-736-041 | Mechanical Engineering | CAD modeling, mechanical layout design, and primary team-to-faculty advisor coordinator. |
+| **Mohammed Muzzammil** | 1604-24-736-039 | Mechanical Engineering | CAD modeling, mechanical layout design, and assembly layout integration. |
+| **Mohammed Qubaib** | 1604-24-735-026 | Electronics & Communication | Electrical system wiring, sensor integration, hardware harnesses, and project logistics coordination. |
+| **Syed Faisal** | 1604-24-736-029 | Mechanical Engineering | Hands-on chassis fabrication, welding, structural assembly, and project operations logistics. |
 
 ---
 
