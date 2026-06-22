@@ -6,6 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	site: 'https://onerealti.github.io',
 	base: '/astro-safl',
+	trailingSlash: 'always',
 	integrations: [
 		starlight({
 			title: 'My Docs',
