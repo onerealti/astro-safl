@@ -7,6 +7,10 @@ description: System introduction, objectives, and architecture overview of the S
 
 The **Smart Agri Four Legged Bot** is a semi-autonomous agricultural robot designed to support precision farming through automated weed detection and in-situ soil condition monitoring. The project emphasizes modularity, mechanical reliability, and ease of maintenance under real-world agricultural constraints.
 
+| Symmetrical CAD Overview | Top-Left Render View |
+| :---: | :---: |
+| ![Figure 3.1: Isometric CAD view of the complete robot](../../assets/images/AgriML_77_Page_34_Image_0001.jpg) | ![Figure 3.17: Final CAD render, top-left view](../../assets/images/AgriML_77_Page_46_Image_0001.jpg) |
+
 The robot is engineered around a hybrid fabrication approach:
 1. **Mechanical Substructure**: A robust, laser-cut 3mm mild steel chassis reinforced with bottom plates and connected to four articulated planar legs.
 2. **Electronics & Computing**: An **NVIDIA Jetson Nano** single-board computer acts as the central brain, handling visual input from an **Intel RealSense D435** depth camera and serial telemetry from an **Amici Sense** soil probe.
@@ -72,6 +76,19 @@ graph TD
 
 ---
 
+## Kinematics & Leg Articulation
+
+The robot's planar legs are articulated in three segments, allowing the body to adjust its pitch and ground height to maintain vertical camera stability and traction over sloped terrain.
+
+| Left Side View (Inclined Posture) | Right Side View (Neutral Posture) |
+| :---: | :---: |
+| ![Figure 3.12: Left side view of bot in inclined posture](../../assets/images/AgriML_77_Page_42_Image_0001.jpg) | ![Figure 3.13: Right side view of bot in neutral posture](../../assets/images/AgriML_77_Page_42_Image_0002.jpg) |
+
+*   **Extended Layout (Declined configuration for downhill locomotion)**:
+    ![Figure 3.14: Extended leg layout for downhill travel](../../assets/images/AgriML_77_Page_43_Image_0001.jpg)
+
+---
+
 ## Key Hardware Summary
 
 | Component | Specification | Purpose |
@@ -82,3 +99,15 @@ graph TD
 | **Amici Sense Probe** | Dual 180mm stainless steel probes | Measures soil moisture, pH, fertility, temperature, light, and humidity. |
 | **Geared DC Motors** | 4x planetary geared units | Drives shoulder joints for body height and pitch adjustments. |
 | **Brushless Hub Motors** | 2x 36V 350W direct-drive wheels | Distal foot units providing primary forward and reverse locomotion. |
+
+---
+
+## Project Photo Gallery
+
+Below are selected high-resolution photographs taken during the assembly and field testing phase of the physical prototype:
+
+| In-Field Traversal | Electronics Core |
+| :---: | :---: |
+| ![Physical Bot In-Field Traversal](../../assets/images/images_dump/img.jpg) | ![Assembled Chassis Electronics Core](../../assets/images/images_dump/WhatsApp%20Image%202026-05-16%20at%2015.48.38.jpeg) |
+| **Shoulder Geared Linkages** | **Weed Inference Bounding Box** |
+| ![Chassis & Shoulder Geared Linkages](../../assets/images/images_dump/WhatsApp%20Image%202026-05-11%20at%2020.41.30.jpeg) | ![Weed Bounding Box Inference Capture](../../assets/images/images_dump/WhatsApp%20Image%202026-04-12%20at%2021.10.25.jpeg) |

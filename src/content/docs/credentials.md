@@ -53,14 +53,23 @@ Below is the list of undergraduate mechanical engineering students who designed,
 
 | Student Name | Hall Ticket Number | Department/Section | Role & Key Contributions |
 | :--- | :--- | :--- | :--- |
-| **Mohammed Fazlur Rahman Kaleemi** | 1604-21-736-077 | Mechanical Engineering | Lead Author, CAD Modeling, FEA Simulation, ML Sync. |
-| **Mohammed Muzaffar Mohiuddin** | 1604-21-736-072 | Mechanical Engineering | Chassis Fabrication, Welding, and Hardware Integration. |
-| **Asjad Ullah Hussain** | 1604-21-736-067 | Mechanical Engineering | Assembly, Spring Compliant-Leg Geometry, Calibration. |
-| **Mirza Mahboob Ali Baig** | 1604-21-736-016 | Mechanical Engineering | Electrical Routing, Harness Assembly, and Sensor Placement. |
-| **Abdul Rahman Abdul Raheem Mohammed** | 1604-21-748-058 | Production Engineering | 3D Printing Optimization, Post-Processing, Enclosures. |
-| **Mohd Safwan** | 1604-21-734-026 | Mechanical Engineering | Field Testing, Calipers Verifications, Ground Profiling. |
-| **Khaja Hameed Ullah** | 1604-21-735-113 | Mechanical Engineering | Procurement Scheduling, Budget Logs, and Material Tests. |
-| **Mohammed Abdul Raheem** | 1604-21-748-031 | Production Engineering | Thermal Mapping, Component Spacers, and Fan Placements. |
+| **Mohammed Zainul Abedin Kaleemi** | 1604-24-736-041 | Mechanical Engineering | Team Lead, CAD Design, and System Architecture. |
+| **Mohammed Qubaib** | 1604-24-736-017 | Mechanical Engineering | Structural Steel Fabrication, FEA Stress Simulation, and Analysis. |
+| **Mohammed Muzzammil** | 1604-24-735-026 | Mechanical Engineering | Edge ML Pipeline Deployment, Arduino Motor Logic, and Control. |
+| **Syed Faisal** | 1604-24-736-039 | Mechanical Engineering | Power Supply Systems, Sensor Calibration, and Field Testing. |
+
+---
+
+## Awards & Achievements
+
+The **Smart Agri Four Legged Bot** (Team SAFL-B) was entered into the city-wide **MAKEFORHYDERABAD** 2-Day Make-a-thon competition on **15th & 16th May 2026** (held at Symbiosis Institute of Technology, Hyderabad). The event was organized as a Titan Design Impact Movement social initiative by **Titan Company**, **Symbiosis Institute of Technology (SIT)**, and **InUnity Pvt. Ltd.**
+
+*   **Achievement**: <Badge text="1st Place Winner" variant="success" />
+*   **Prize Awarded**: **₹10,000** Cash Prize to Team SAFL-B.
+
+| Hackathon 1st Place Certificate | Cash Prize Check (Team SAFL-B) |
+| :---: | :---: |
+| ![Murtaza Ahmed 1st Place Certificate](../../assets/images/images_dump/certMurtaza-1.png) | ![MAKEFORHYDERABAD ₹10,000 Cash Check](../../assets/images/images_dump/WhatsApp%20Image%202026-05-16%20at%2015.48.38.jpeg) |
 
 ---
 

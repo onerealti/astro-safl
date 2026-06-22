@@ -54,6 +54,8 @@ graph LR
     *   **Maximum Strain**: $1.238 \times 10^{-4}$ (well within elastic boundaries)
     *   **Factor of Safety (FOS)**: **5.17**
 
+![Figure 3.19: Von Mises stress distribution - static vertical load](../../assets/images/AgriML_77_Page_52_Image_0001.jpg)
+
 ### Case 2: Dynamic Lateral Bump Load
 *   **Physical Representation**: A sudden bump or minor impact hitting one leg laterally during traversal.
 *   **Boundary Conditions**: Underside of the chassis fixed; a 30 N lateral side force applied directly to a leg mount.
@@ -62,6 +64,10 @@ graph LR
     *   **Maximum Deflection**: 3.60 mm (deflected in the lateral axis)
     *   **Maximum Strain**: $1.451 \times 10^{-4}$
     *   **Factor of Safety (FOS)**: **2.04**
+
+| Strain Distribution | Stress Concentration | Bending Deflection |
+| :---: | :---: | :---: |
+| ![Figure 3.20: Strain under lateral load](../../assets/images/AgriML_77_Page_53_Image_0001.jpg) | ![Figure 3.21: Von Mises stress under lateral load](../../assets/images/AgriML_77_Page_54_Image_0001.jpg) | ![Figure 3.22: Displacement under lateral load](../../assets/images/AgriML_77_Page_54_Image_0002.jpg) |
 
 ### Case 3: Soil Probe Insertion Resistance
 *   **Physical Representation**: Downward reaction force exerted by hard-packed loamy soil on the PETG mount during probe docking.
@@ -72,9 +78,41 @@ graph LR
     *   **Maximum Strain**: $3.844 \times 10^{-5}$
     *   **Factor of Safety (FOS)**: **14.40** (designed with a high safety margin to resist cyclic fatigue)
 
+| Stress Concentration | Deflection Gradient | Strain Distribution |
+| :---: | :---: | :---: |
+| ![Figure 3.23: Local stress concentration at probe clamp slot](../../assets/images/AgriML_77_Page_56_Image_0001.jpg) | ![Figure 3.24: Vertical displacement of probe bracket under load](../../assets/images/AgriML_77_Page_56_Image_0002.jpg) | ![Figure 3.25: Strain in probe bracket under load](../../assets/images/AgriML_77_Page_57_Image_0001.jpg) |
+
 ---
 
-## 3. Field Correlation & Validation
+## 3. Fabrication & Component Assembly
+
+To bridge simulation and physical reality, the robot chassis base and key support links were fabricated through a hybrid approach combining metal laser cutting with FDM 3D printing.
+
+### Chassis Plate Laser Cut Execution
+*   **Chassis Plate**: CNC laser-cut 3mm mild steel sheet, finished with anti-rust black primer and matte coating.
+
+| Laser Cut Setup | Completed Chassis Plate |
+| :---: | :---: |
+| ![Figure 3.26: Chassis base loaded in laser cutting software](../../assets/images/AgriML_77_Page_61_Image_0001.jpg) | ![Figure 3.27: Chassis base after laser cutting](../../assets/images/AgriML_77_Page_61_Image_0002.jpg) |
+
+### 3D Printed PETG Enclosures & Mounts
+*   **Venting & Enclosures**: Interlocking PETG shells printed on an Elegoo Neptune 4 Max to contain motor drivers, regulators, and sensors.
+
+| 3D Printed Upper Enclosures | 3D Printed Probe Bracket |
+| :---: | :---: |
+| ![Figure 3.28: 3D printed upper shell parts](../../assets/images/AgriML_77_Page_62_Image_0001.jpg) | ![Figure 3.29: Probe mount and sensor housing printed](../../assets/images/AgriML_77_Page_63_Image_0001.jpg) |
+
+### Modular Leg & Shoulder Actuator Assemblies
+*   **Shoulder Cap**: Magnetically mounted shoulder enclosure with neodymium magnets for tool-less drive gear checks.
+*   **Distal Lock**: 3D-printed split-piece locking block to lock the brushless hub wheel shaft firmly without adhesives.
+
+| Magnetically Mounted Shoulder Cap | Locking Block & Leg Module |
+| :---: | :---: |
+| ![Figure 3.30: Magnetically mounted shoulder cap enclosure](../../assets/images/AgriML_77_Page_64_Image_0001.jpg) | ![Figure 3.31: Split-piece locking block for hub wheel shaft](../../assets/images/AgriML_77_Page_65_Image_0001.jpg) |
+
+---
+
+## 4. Field Correlation & Validation
 
 After assembly, physical measurements were recorded using digital calipers and inclinometers during loaded trials to validate simulation accuracy.
 
@@ -85,9 +123,12 @@ After assembly, physical measurements were recorded using digital calipers and i
 | **Structural Fasteners Integrity** | Safe | No bolt loosening or shear | **Valid (Nylock secure)** |
 | **PETG Frame Softening** | Safe | Structural shape retained | **Valid (No warping)** |
 
+*   **Completed Leg Assembly**:
+    ![Figure 3.32: Completed leg module with Nylock fasteners](../../assets/images/AgriML_77_Page_65_Image_0002.jpg)
+
 ---
 
-## 4. Terrain & Locomotion Performance
+## 5. Terrain & Locomotion Performance
 
 Field trials evaluated the chassis stability and the passive compliant spring joints in the legs across uneven loamy soil.
 
@@ -100,7 +141,7 @@ Field trials evaluated the chassis stability and the passive compliant spring jo
 
 ---
 
-## 5. Thermal Profiles Under Continuous Operation
+## 6. Thermal Profiles Under Continuous Operation
 
 The robot was run continuously for 30 minutes in direct sunlight at an average ambient temperature of **33.5°C**. Temperatures were logged every 5 minutes using an infrared thermometer.
 

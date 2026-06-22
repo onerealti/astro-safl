@@ -20,8 +20,10 @@ flowchart LR
 ```
 
 *   **Central Processor**: **NVIDIA Jetson Nano** running Ubuntu 18.04 LTS (JetPack SDK)
+    ![Figure 3.37: NVIDIA Jetson Nano core single board computer](../../assets/images/AgriML_77_Page_71_Image_0001.jpg)
 *   **Deep Learning Backend**: PyTorch
 *   **Primary Perception Sensor**: **Intel RealSense D435** depth camera
+    ![Figure 3.39: Intel RealSense D435 perception camera module](../../assets/images/AgriML_77_Page_73_Image_0001.jpg)
     *   **Data Channels**: RGB frames fused with Active Infrared Stereo depth maps
     *   **Interface**: USB 3.0
     *   **Mounting Alignment**: Centered on chassis axis, pitched downward at **10°** (adjusted from 15° to optimize near-field crop zone coverage between the front wheels)
@@ -41,6 +43,15 @@ The weed detection task uses a lightweight Convolutional Neural Network (CNN) tr
 | **Detection Accuracy** | **>88.0%** | Broad-leaf weed cluster classification |
 | **Power Consumption** | **9.6 W** (Peak) | Jetson Nano + RealSense Camera active |
 
+### Bounding Box Detection Outputs
+
+| Real-Time Bounding Box Detection | Crop Zone Visual Boundaries |
+| :---: | :---: |
+| ![Figure 3.38: Real-time weed detection and bounding boxes](../../assets/images/AgriML_77_Page_72_Image_0001.jpg) | ![Figure 3.40: Real-time maize crop detection on Jetson Nano](../../assets/images/AgriML_77_Page_75_Image_0001.jpg) |
+
+*   **Selective Detection of Weeds**:
+    ![Figure 3.41: Selective weed detection using visual bounding box borders](../../assets/images/AgriML_77_Page_75_Image_0002.jpg)
+
 ---
 
 ## 3. Vibration & Jitter Mitigation
@@ -54,19 +65,35 @@ To prevent camera shake from causing image blur and ML misclassifications, the r
 
 ### Software Countermeasures
 *   **RealSense Frame Averaging**: Averaging consecutive depth frames to eliminate high-frequency noise.
-*   **Classification Confidence Filtering**: A **3-frame rolling average** is computed before confirming weed bounding box triggers.
+*   **Confidence Filtering**: A **3-frame rolling average** is computed before confirming weed bounding box triggers.
 *   **Sensor Telemetry Sync**: Arduino halts locomotion motors during soil probe insertion to completely eliminate vibration noise during serial telemetry transmission.
 
 ---
 
-## 4. Soil Probe Telemetry Data
+## 4. Hardware System Integration & Wiring
 
-The **Amici Sense** multi-parameter soil analysis system logs environmental metrics. telemetries are parsed via Python and combined with ML outputs in a CSV file.
+A structured electrical base plate separates signal lines and motor supplies.
+
+| Base Plate Layout | Power & Switching Layout |
+| :---: | :---: |
+| ![Figure 3.33: PLA component mounting base plate](../../assets/images/AgriML_77_Page_66_Image_0001.jpg) | ![Figure 3.34: Power supply and switching circuits inside chassis](../../assets/images/AgriML_77_Page_67_Image_0001.jpg) |
+
+*   **Cable Routing Layout**:
+    ![Figure 3.36: Top-down view of wire layout with fasteners](../../assets/images/AgriML_77_Page_69_Image_0001.jpg)
+
+---
+
+## 5. Soil Probe Telemetry Data
+
+The **Amici Sense** soil analysis system logs soil parameters. telemetries are parsed via Python and combined with ML outputs in a CSV file.
 
 ### Telemetry Hardware Integration
 *   **Power Rail**: 5V rail stepped down via DC-DC buck converter.
 *   **Data Bus**: Serial UART communication with Jetson Nano GPIO, utilizing level shifters to step 5V signals down to Jetson-safe 3.3V levels.
 *   **Response Time**: `< 5 seconds` per measurement cycle.
+
+*   **Rear Mount Insertion Detail**:
+    ![Figure 3.35: Rear mount installation for Amici probe](../../assets/images/AgriML_77_Page_68_Image_0001.jpg)
 
 ### Field Logs (Three Consecutive Trials)
 
