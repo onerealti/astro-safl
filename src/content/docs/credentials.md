@@ -74,6 +74,45 @@ The **Smart Agri Four Legged Bot** (Team SAFL-B) was entered into the city-wide 
 
 ---
 
+## Project Development Timeline (Appendix I)
+
+The project followed a structured lifecycle from concept and requirement analysis to field testing and final thesis binding:
+
+| Phase | Time Frame | Activities | Deliverables |
+| :--- | :--- | :--- | :--- |
+| **Phase 1** | November 2024 | Problem identification, requirement analysis, initial farm visits. | Project objective definition, preliminary report. |
+| **Phase 2** | December 2024 | Conceptual sketches, CAD modeling of bot structure and components. | Initial mechanical design with 3D models. |
+| **Phase 3** | January 2025 | Finite Element Analysis (FEA), stress validation, design optimization. | FEA reports, validated CAD model. |
+| **Phase 4** | February 2025 | Fabrication of chassis (steel), 3D printing of mounts and sensor enclosures. | Fully built mechanical framework. |
+| **Phase 5** | March 2025 | Hardware integration (Jetson Nano, RealSense, soil probe), wiring, vibration damping. | Assembled robotic platform with integrated systems. |
+| **Phase 6** | April 2025 | Software deployment, ML model integration, Amici sensor calibration. | Functional ML-ready robot, calibrated sensors. |
+| **Phase 7** | May 1–10, 2025 | Field testing, results recording, final report preparation, and documentation. | Testing reports, final bound thesis. |
+
+---
+
+## Relevance to Environment, Safety, & Ethics (Appendix II)
+
+The project contributions were mapped against the standard National Board of Accreditation (NBA) **Program Outcomes (PO1 to PO12)** to evaluate relevance to engineering practice, society, and sustainability:
+
+*(Mapping scale: 3 = Highly Relevant, 2 = Moderately Relevant, 1 = Less Relevant, — = Not Relevant)*
+
+| Program Outcome | Mapping | Project Contribution |
+| :--- | :---: | :--- |
+| **PO1: Engineering Knowledge** | **3** | Applied mechanical design, electronics integration, and edge ML principles to solve real-world agricultural automation challenges. |
+| **PO2: Problem Analysis** | **3** | Analyzed field requirements and translated them into specific mechanical, electrical, and software specifications. |
+| **PO3: Design/Development of Solutions** | **3** | Engineered a modular, stable, and terrain-adaptable quadruped wheeled robot chassis addressing specific farming needs. |
+| **PO4: Conduct Investigations of Complex Problems** | **2** | Performed FEA-based structural stress/deflection simulations and validated them against physical field data. |
+| **PO5: Modern Tool Usage** | **3** | Utilized CAD (SolidWorks), FEA (SolidWorks Simulation), edge computing hardware, PyTorch ML models, and digital calipers. |
+| **PO6: The Engineer and Society** | **2** | Aimed to address rural labor shortages and improve farm productivity, contributing positive social value. |
+| **PO7: Environment and Sustainability** | **3** | Promotes sustainable farming practices by enabling targeted weed treatment and reducing chemical overuse in fields. |
+| **PO8: Ethics** | **2** | Conducted testing with high regard for operator safety, electrical isolation, and verified academic integrity of research. |
+| **PO9: Individual and Team Work** | **3** | Executed in a multidisciplinary team setting with shared tasks across mechanical fabrication, electronics design, and software. |
+| **PO10: Communication** | **2** | Prepared design documents, technical schematics, and delivered final presentations to academic reviewers. |
+| **PO11: Project Management and Finance** | **2** | Managed component procurement, 3D printing schedules, and assembly timelines under a limited budget. |
+| **PO12: Life-Long Learning** | **2** | Gained hands-on cross-disciplinary engineering capabilities (edge GPU logic, CAD/FEA sync) through self-directed learning. |
+
+---
+
 ## Document Validation
 
 > [!NOTE]

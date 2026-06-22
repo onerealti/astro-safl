@@ -81,6 +81,29 @@ A structured electrical base plate separates signal lines and motor supplies.
 *   **Cable Routing Layout**:
     ![Figure 3.36: Top-down view of wire layout with fasteners](../../assets/images/AgriML_77_Page_69_Image_0001.jpg)
 
+### Actuation & Low-Level Control Architecture
+
+Precise and coordinated joint movements are managed using a dual-controller layout:
+*   **Low-Level Controller**: An **Arduino Due** acts as the dedicated real-time actuator controller. It is selected for its high-speed 32-bit ARM Cortex-M3 architecture (84 MHz clock frequency), 12 hardware PWM outputs, and multiple hardware serial (UART) interfaces.
+*   **High-Level Interface**: Commands are received from the NVIDIA Jetson Nano over a dedicated serial connection running at **115,200 baud**. The Arduino Due parses these motion paths and translates them into PWM commands.
+*   **Actuators & Drivers**:
+    *   **Geared DC Motors**: Four planetary geared units for shoulder articulation (driven via dual H-bridge motor drivers).
+    *   **Brushless Hub Motors**: Two distal direct-drive hub motors (driven via high-current Electronic Speed Controllers or ESCs) provide primary locomotion.
+
+### Power Rail Separation
+
+To prevent motor current draws from causing brownouts or logic resets on the Jetson Nano, power rails are split:
+*   **Logic Rail**: 5V rail stepped down from the main 24V bus via a DC-DC buck converter to supply the Jetson Nano, camera, and sensors.
+*   **Geared Motor Rail**: A regulated 12V supply bus managed by the H-bridge drivers for shoulder articulation.
+*   **Locomotion Motor Rail**: A direct 24V high-current bus from the battery pack to the ESCs for the hub wheels.
+
+### EMI Shielding & Signal Isolation
+
+To prevent electromagnetic interference (EMI) from the high-torque actuators from corrupting the low-voltage sensor lines (such as I2C, USB 3.0, and UART data):
+*   **Perimeter Routing**: High-current motor lines are routed strictly along the outer edges of the chassis frame.
+*   **Central Data Channels**: Low-voltage signal lines are elevated and routed centrally.
+*   **Ferrite Suppression**: Ferrite beads are added to motor cable pairs, and all motor logic wires are shielded and grounded to establish common reference planes.
+
 ---
 
 ## 5. Soil Probe Telemetry Data

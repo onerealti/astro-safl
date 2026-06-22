@@ -82,11 +82,36 @@ graph LR
 | :---: | :---: | :---: |
 | ![Figure 3.23: Local stress concentration at probe clamp slot](../../assets/images/AgriML_77_Page_56_Image_0001.jpg) | ![Figure 3.24: Vertical displacement of probe bracket under load](../../assets/images/AgriML_77_Page_56_Image_0002.jpg) | ![Figure 3.25: Strain in probe bracket under load](../../assets/images/AgriML_77_Page_57_Image_0001.jpg) |
 
+### Simulation Results Feedback & Design Optimization
+
+Based on the FEA results, several structural optimizations were identified to improve future design revisions:
+
+| Component Area | Current Status | Suggested Design Improvement |
+| :--- | :--- | :--- |
+| **Leg-to-frame flange** | Single thickness plate | Add gusset plate or tapered transition to improve lateral bending resistance. |
+| **Probe mount neck** | Flat profile bracket | Integrate a curved fillet/radius at the neck region to further distribute localized stress. |
+| **Base ribs** | CNC-cut steel plate | Implement thickness reduction in non-critical zones to optimize overall weight. |
+| **Chassis cutouts** | Decorative X-pattern cutouts | Add minor rounding to inner corners to lower localized stress spikes. |
+
 ---
 
 ## 3. Fabrication & Component Assembly
 
 To bridge simulation and physical reality, the robot chassis base and key support links were fabricated through a hybrid approach combining metal laser cutting with FDM 3D printing.
+
+### Materials & Components Procured
+
+The hybrid fabrication strategy mapped specific materials and manufacturing methods to their structural or environmental needs:
+
+| Part / Subassembly | Material / Filament | Manufacturing Method | Structural Role & Justification |
+| :--- | :--- | :--- | :--- |
+| **Chassis Frame** | Mild Steel | CNC cut + manual welding | Main load-bearing frame; provides high yield strength and torque resistance. |
+| **Reinforcement Plates** | Mild Steel | CNC laser cut | Provides added torsional stiffness and distributes leg forces. |
+| **Shell Enclosures** | PETG (1.75 mm) | FDM 3D Printed | Lightweight cover; provides UV, heat, and moisture resistance in the field. |
+| **Wheel Mounts & Leg Joints** | PLA+ | FDM 3D Printed | Distal leg linkage; high impact resistance and rigid structural support. |
+| **Probe Mount & Bracket** | PETG | FDM 3D Printed | Holds soil analysis probe; high fatigue life under cyclic insertion loads. |
+| **Electronics Base Plate** | PLA | FDM 3D Printed | Internal component base; insulates electronics and routes cables cleanly. |
+| **Wiring Accessories** | Copper + PVC | Manual assembly | Interconnects power rails and signal lines. |
 
 ### Chassis Plate Laser Cut Execution
 *   **Chassis Plate**: CNC laser-cut 3mm mild steel sheet, finished with anti-rust black primer and matte coating.
@@ -97,10 +122,17 @@ To bridge simulation and physical reality, the robot chassis base and key suppor
 
 ### 3D Printed PETG Enclosures & Mounts
 *   **Venting & Enclosures**: Interlocking PETG shells printed on an Elegoo Neptune 4 Max to contain motor drivers, regulators, and sensors.
+*   **Print Configuration Details**:
+    *   **Layer Height**: 0.2 mm
+    *   **Infill Density**: 20%
+    *   **Nozzle Temperature**: 240°C
+    *   **Bed Temperature**: 60°C
+    *   **Slicing Details**: Ultimaker Cura slicer with brim support active to completely eliminate warping.
+    *   **Local Reinforcements**: Critical stress zones like screw bosses and cable pass-through slots were printed with increased wall thickness (2.4 mm) for extra durability.
 
-| 3D Printed Upper Enclosures | 3D Printed Probe Bracket |
-| :---: | :---: |
-| ![Figure 3.28: 3D printed upper shell parts](../../assets/images/AgriML_77_Page_62_Image_0001.jpg) | ![Figure 3.29: Probe mount and sensor housing printed](../../assets/images/AgriML_77_Page_63_Image_0001.jpg) |
+| 3D Printed Upper Enclosures | 3D Printed Probe Bracket | Probe Mount Assembly CAD |
+| :---: | :---: | :---: |
+| ![Figure 3.28: 3D printed upper shell parts](../../assets/images/AgriML_77_Page_62_Image_0001.jpg) | ![Figure 3.29: Probe mount and sensor housing printed](../../assets/images/AgriML_77_Page_63_Image_0001.jpg) | ![Figure 3.18: Probe mount CAD assembly](../../assets/images/AgriML_77_Page_47_Image_0001.jpg) |
 
 ### Modular Leg & Shoulder Actuator Assemblies
 *   **Shoulder Cap**: Magnetically mounted shoulder enclosure with neodymium magnets for tool-less drive gear checks.
@@ -109,6 +141,16 @@ To bridge simulation and physical reality, the robot chassis base and key suppor
 | Magnetically Mounted Shoulder Cap | Locking Block & Leg Module |
 | :---: | :---: |
 | ![Figure 3.30: Magnetically mounted shoulder cap enclosure](../../assets/images/AgriML_77_Page_64_Image_0001.jpg) | ![Figure 3.31: Split-piece locking block for hub wheel shaft](../../assets/images/AgriML_77_Page_65_Image_0001.jpg) |
+
+### Mechanical Assembly Challenges & Fixes
+
+During the physical fabrication and calibration of the prototype, the team resolved several real-world engineering issues:
+
+| Problem Faced | Root Cause | Solution Applied |
+| :--- | :--- | :--- |
+| **Leg clearance mismatch with wheel shaft** | Dimensional variation in raw hub motor shafts | Adjusted the CAD files with a small offset and reprinted the brackets. |
+| **PETG warping in large shell print** | Bed adhesion failure due to uneven cooling | Added a print brim and optimized the chamber/cooling fan settings. |
+| **Motor vibration causing screw loosening** | Cyclic resonance during drive motor tests | Applied Loctite thread locker and switched to Nylock nuts on critical fasteners. |
 
 ---
 
@@ -132,6 +174,37 @@ After assembly, physical measurements were recorded using digital calipers and i
 
 Field trials evaluated the chassis stability and the passive compliant spring joints in the legs across uneven loamy soil.
 
+### Field Testing Setup & Objectives
+
+Before evaluating performance, the robot was tested under representative field conditions mirroring small-scale agricultural fields.
+*   **Test Area**: 18 m × 12 m dry soil field.
+*   **Surface Profile**: Uneven terrain with a slope up to 10° and elevation variance of ±4.2 cm.
+
+#### Field Conditions During Testing
+
+| Environmental Parameter | Value / Range |
+| :--- | :--- |
+| **Ambient Temperature** | 31°C – 34°C |
+| **Soil Moisture Content** | 13.2% (average) |
+| **Relative Humidity** | 54% – 57% |
+| **Maximum Slope in Field** | ~10° |
+| **Soil Texture** | Loamy-dry, cracked |
+
+#### Test Objectives & Validation Strategy
+
+The field testing plan was structured around validating the primary objectives:
+
+| Objective | Objective Description | Validation Method | Quantifiable Result Status |
+| :---: | :--- | :--- | :--- |
+| **1** | Terrain-capable mechanical design | Motion over inclines and uneven terrain | Climbed ~9.8° slope stable; chassis tilt < 3.5° |
+| **2** | Structural integrity under loads | Frame deflection checks under live loads | Caliper verified max deflection of 0.31 mm |
+| **3** | Hybrid fabrication stability | Joint inspection post runtime | Joint geometry remained stable; no warping |
+| **4** | ML-based real-time weed detection | Live Jetson Nano inference tests | Local CNN inference speed 9.2 FPS (stationary) |
+| **5** | Sensor & electronics mounting | Vibration, heat, and fitment checks | Air-gapped ventilation kept heatsinks safe |
+| **6** | System behavior under field stress | Combined endurance run (motion + thermal) | Continuous run (30 mins) completed without failure |
+
+### Traversal Performance Matrix
+
 | Surface Condition | Slope Angle | Chassis Tilt | Performance Result |
 | :--- | :--- | :--- | :--- |
 | **Forward Incline Climb** | ~9.8° | < 3.5° | Stable traversal, no slip or rollback. |
@@ -152,4 +225,4 @@ The robot was run continuously for 30 minutes in direct sunlight at an average a
 | **Li-ion Battery Pack** | 38.2°C | 60.0°C | **Stable (Safe operational margin)** |
 
 > [!TIP]
-> The air-gapped ventilation grooves integrated into the PETG upper shell (refer to Section 3.1.9) allowed natural convection to keep the central electronics below critical thresholds, eliminating the need for high-current cooling fans.
+> The air-gapped ventilation grooves integrated into the PETG upper shell allowed natural convection to keep the central electronics below critical thresholds, eliminating the need for high-current cooling fans.

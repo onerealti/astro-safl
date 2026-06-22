@@ -74,6 +74,14 @@ graph TD
     Direct24V -->|24V Power| ESCs
 ```
 
+### Internal Layout CAD Detail
+
+The internal layout was designed to separate data processing units from high-current power electronics to minimize EMI and facilitate thermal convection.
+
+| Internal Layout Cutaway | Bottom View with Stiffeners |
+| :---: | :---: |
+| ![Figure 3.3: Internal cutaway showing battery and boards](../../assets/images/AgriML_77_Page_36_Image_0001.jpg) | ![Figure 3.2: Chassis base plate with reinforcement stiffeners](../../assets/images/AgriML_77_Page_35_Image_0001.jpg) |
+
 ---
 
 ## Kinematics & Leg Articulation
@@ -86,6 +94,25 @@ The robot's planar legs are articulated in three segments, allowing the body to 
 
 *   **Extended Layout (Declined configuration for downhill locomotion)**:
     ![Figure 3.14: Extended leg layout for downhill travel](../../assets/images/AgriML_77_Page_43_Image_0001.jpg)
+
+### Leg Mechanical Linkages & Compliance
+
+Each planar leg is engineered as a modular three-joint assembly (Hip, Knee, and Foot) with passive compliance and internal routing pathways:
+
+*   **Torsional Spring compliance**: A torsional spring joint is embedded in the knee joint housing to act as a passive compliance mechanism, helping to absorb ground vibration and keep traction over uneven profiles.
+*   **Split-Piece Routing Layout**: Thigh and shin segments feature a split-piece layout that allows routing high-current lines and encoder cables internally, protecting wires from exposure and mechanical wear.
+
+| Exploded Leg-Wheel Assembly | Leg Module CAD Detail | Knee Joint Torsional Spring |
+| :---: | :---: | :---: |
+| ![Figure 3.4: Exploded view of leg-wheel assembly](../../assets/images/AgriML_77_Page_37_Image_0001.jpg) | ![Figure 3.5: Leg module with distal hub motor](../../assets/images/AgriML_77_Page_38_Image_0001.jpg) | ![Figure 3.6: Torsional spring compliance joint](../../assets/images/AgriML_77_Page_39_Image_0001.jpg) |
+
+| Shin Routing (Inner seat) | Shin Routing (Outer seat) | Thigh Routing (Inner seat) | Thigh Routing (Outer seat) |
+| :---: | :---: | :---: | :---: |
+| ![Figure 3.7: Shin internal channel split 1](../../assets/images/AgriML_77_Page_39_Image_0002.jpg) | ![Figure 3.8: Shin internal channel split 2](../../assets/images/AgriML_77_Page_40_Image_0001.jpg) | ![Figure 3.9: Thigh internal channel split 1](../../assets/images/AgriML_77_Page_40_Image_0002.jpg) | ![Figure 3.10: Thigh internal channel split 2](../../assets/images/AgriML_77_Page_41_Image_0001.jpg) |
+
+| Shin-to-Wheel Linkage |
+| :---: |
+| ![Figure 3.11: Distal shin assembled with hub wheel](../../assets/images/AgriML_77_Page_41_Image_0002.jpg) |
 
 ---
 
