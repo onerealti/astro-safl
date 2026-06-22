@@ -15,12 +15,18 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [{ autogenerate: { directory: 'guides' } }],
+					label: 'Project Overview',
+					items: [
+						{ label: 'System Introduction', link: '/intro/' },
+					],
 				},
 				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
+					label: 'Engineering & Validation',
+					items: [
+						{ label: 'Institutional Credentials', link: '/credentials/' },
+						{ label: 'Structural Validation', link: '/structural-validation/' },
+						{ label: 'ML Pipeline Benchmarks', link: '/ml-pipeline/' },
+					],
 				},
 			],
 		}),

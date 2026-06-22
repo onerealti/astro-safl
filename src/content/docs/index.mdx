@@ -1,40 +1,39 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Smart Agri Four Legged Bot
+description: Precision Agriculture Robotics - Documentation & Validation Reports
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Structural Design, Finite Element Analysis (FEA) Validation, and Embedded Machine Learning Benchmarks for a Semi-Autonomous Agricultural Rover.
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: System Overview
+      link: /intro/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
+      variant: primary
+    - text: Structural Validation
+      link: /structural-validation/
+      icon: document
+    - text: ML Benchmarks
+      link: /ml-pipeline/
+      icon: setting
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Key Engineering Pillars
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Structural Integrity" icon="bars">
+		Validated using **Finite Element Analysis (FEA)** under static vertical loads, dynamic bumps, and soil probe insertions with a minimum safety factor of **2.04**.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Machine Learning Inference" icon="laptop">
+		Real-time broad-leaf weed detection using a lightweight CNN model deployed locally on an **NVIDIA Jetson Nano** at up to **9.2 FPS**.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Modular Soil Analysis" icon="document">
+		In-situ environmental sensing utilizing the **Amici Sense** multi-parameter soil probe to monitor pH, moisture, humidity, temperature, and fertility.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="Institutional Foundations" icon="open-book">
+		Developed at the **Mechanical Engineering Department, MJCET** (Affiliated to Osmania University) for precision agricultural automation.
 	</Card>
 </CardGrid>
