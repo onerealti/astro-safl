@@ -106,8 +106,9 @@ The robot's planar legs are articulated in three segments, allowing the body to 
 
 Below are selected high-resolution photographs taken during the assembly and field testing phase of the physical prototype:
 
-| In-Field Traversal | Electronics Core |
+| Completed Prototype Assembly | Laboratory Assembly Workbench |
 | :---: | :---: |
-| ![Physical Bot In-Field Traversal](../../assets/images/images_dump/img.jpg) | ![Assembled Chassis Electronics Core](../../assets/images/images_dump/WhatsApp%20Image%202026-05-16%20at%2015.48.38.jpeg) |
-| **Shoulder Geared Linkages** | **Weed Inference Bounding Box** |
-| ![Chassis & Shoulder Geared Linkages](../../assets/images/images_dump/WhatsApp%20Image%202026-05-11%20at%2020.41.30.jpeg) | ![Weed Bounding Box Inference Capture](../../assets/images/images_dump/WhatsApp%20Image%202026-04-12%20at%2021.10.25.jpeg) |
+| ![Smart Agri Four Legged Bot](../../assets/images/images_dump/img.jpg) | ![Student Team Work Session](../../assets/images/images_dump/IMG_0276(1).jpg) |
+| **Internal Compartments Layout** | **Early Prototype Stage** |
+| ![Chassis Internal Compartment Layout](../../assets/images/images_dump/IMG_0324(1).jpg) | ![First-Phase Prototype Traversal Check](../../assets/images/images_dump/WhatsApp%20Image%202026-04-12%20at%2021.10.25.jpeg) |
+
