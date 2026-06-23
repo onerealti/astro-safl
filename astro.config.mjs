@@ -21,7 +21,7 @@ export default defineConfig({
         }),
     },
     integrations: [starlight({
-        title: 'My Docs',
+        title: 'S.A.F.L',
         customCss: ['./src/styles/custom.css'],
         head: [
             {
