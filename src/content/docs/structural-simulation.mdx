@@ -4,6 +4,14 @@ description: Finite Element Analysis (FEA) variables, SolidWorks setup, simulati
 ---
 
 import { CardGrid, Card, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import vonMisesStatic from '../../assets/images/AgriML_77_Page_52_Image_0001.jpg';
+import strainLateral from '../../assets/images/AgriML_77_Page_53_Image_0001.jpg';
+import stressLateral from '../../assets/images/AgriML_77_Page_54_Image_0001.jpg';
+import dispLateral from '../../assets/images/AgriML_77_Page_54_Image_0002.jpg';
+import stressProbe from '../../assets/images/AgriML_77_Page_56_Image_0001.jpg';
+import dispProbe from '../../assets/images/AgriML_77_Page_56_Image_0002.jpg';
+import strainProbe from '../../assets/images/AgriML_77_Page_57_Image_0001.jpg';
 
 This document compiles the finite element analysis (FEA) setup variables, simulation load cases, and structural stress/deflection outcomes of the **Smart Agri Four Legged Bot**.
 
@@ -76,7 +84,10 @@ graph LR
     *   **Maximum Strain**: $1.238 \times 10^{-4}$ (well within elastic boundaries)
     *   **Factor of Safety (FOS)**: **5.17**
 
-![Figure 3.19: Von Mises stress distribution - static vertical load](../../assets/images/AgriML_77_Page_52_Image_0001.jpg)
+<figure>
+  <Image src={vonMisesStatic} alt="Von Mises stress distribution - static vertical load" />
+  <figcaption>Figure 3.19: Von Mises stress distribution — static vertical load</figcaption>
+</figure>
 
 ### Case 2: Dynamic Lateral Bump Load
 *   **Physical Representation**: A sudden bump or minor impact hitting one leg laterally during traversal.
@@ -89,13 +100,22 @@ graph LR
 
 <Tabs>
   <TabItem label="Strain Distribution">
-    ![Figure 3.20: Strain under lateral load](../../assets/images/AgriML_77_Page_53_Image_0001.jpg)
+    <figure>
+      <Image src={strainLateral} alt="Strain under lateral load" />
+      <figcaption>Figure 3.20: Strain under lateral load</figcaption>
+    </figure>
   </TabItem>
   <TabItem label="Stress Concentration">
-    ![Figure 3.21: Von Mises stress under lateral load](../../assets/images/AgriML_77_Page_54_Image_0001.jpg)
+    <figure>
+      <Image src={stressLateral} alt="Von Mises stress under lateral load" />
+      <figcaption>Figure 3.21: Von Mises stress under lateral load</figcaption>
+    </figure>
   </TabItem>
   <TabItem label="Bending Deflection">
-    ![Figure 3.22: Displacement under lateral load](../../assets/images/AgriML_77_Page_54_Image_0002.jpg)
+    <figure>
+      <Image src={dispLateral} alt="Displacement under lateral load" />
+      <figcaption>Figure 3.22: Displacement under lateral load</figcaption>
+    </figure>
   </TabItem>
 </Tabs>
 
@@ -110,13 +130,22 @@ graph LR
 
 <Tabs>
   <TabItem label="Stress Concentration">
-    ![Figure 3.23: Local stress concentration at probe clamp slot](../../assets/images/AgriML_77_Page_56_Image_0001.jpg)
+    <figure>
+      <Image src={stressProbe} alt="Local stress concentration at probe clamp slot" />
+      <figcaption>Figure 3.23: Local stress concentration at probe clamp slot</figcaption>
+    </figure>
   </TabItem>
   <TabItem label="Deflection Gradient">
-    ![Figure 3.24: Vertical displacement of probe bracket under load](../../assets/images/AgriML_77_Page_56_Image_0002.jpg)
+    <figure>
+      <Image src={dispProbe} alt="Vertical displacement of probe bracket under load" />
+      <figcaption>Figure 3.24: Vertical displacement of probe bracket under load</figcaption>
+    </figure>
   </TabItem>
   <TabItem label="Strain Distribution">
-    ![Figure 3.25: Strain in probe bracket under load](../../assets/images/AgriML_77_Page_57_Image_0001.jpg)
+    <figure>
+      <Image src={strainProbe} alt="Strain in probe bracket under load" />
+      <figcaption>Figure 3.25: Strain in probe bracket under load</figcaption>
+    </figure>
   </TabItem>
 </Tabs>
 

@@ -4,6 +4,16 @@ description: Material procurement, 3D printing configurations, physical assembly
 ---
 
 import { CardGrid, Card, Badge, Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+import laserCutSetup from '../../assets/images/AgriML_77_Page_61_Image_0001.jpg';
+import laserCutDone from '../../assets/images/AgriML_77_Page_61_Image_0002.jpg';
+import petgEnclosures from '../../assets/images/AgriML_77_Page_62_Image_0001.jpg';
+import probeBracket from '../../assets/images/AgriML_77_Page_63_Image_0001.jpg';
+import probeMountCad from '../../assets/images/AgriML_77_Page_47_Image_0001.jpg';
+import shoulderCap from '../../assets/images/AgriML_77_Page_64_Image_0001.jpg';
+import lockingBlock from '../../assets/images/AgriML_77_Page_65_Image_0001.jpg';
+import legAssembled from '../../assets/images/AgriML_77_Page_65_Image_0002.jpg';
 
 This document compiles the physical fabrication specifications, assembly methods, field trials correlation, and mechanical testing results of the **Smart Agri Four Legged Bot**.
 
@@ -58,14 +68,15 @@ The hybrid fabrication strategy mapped specific materials and manufacturing meth
 ### Chassis Plate Laser Cut Execution
 *   **Chassis Plate**: CNC laser-cut 3mm mild steel sheet, finished with anti-rust black primer and matte coating.
 
-<CardGrid>
-  <Card title="CNC Laser Cut Setup">
-    ![Chassis base loaded in laser cutting software](../../assets/images/AgriML_77_Page_61_Image_0001.jpg)
-  </Card>
-  <Card title="Completed Chassis Plate">
-    ![Chassis base after laser cutting](../../assets/images/AgriML_77_Page_61_Image_0002.jpg)
-  </Card>
-</CardGrid>
+<figure>
+  <Image src={laserCutSetup} alt="Chassis base loaded in laser cutting software" />
+  <figcaption>CNC Laser Cut Setup — chassis base in cutting software</figcaption>
+</figure>
+
+<figure>
+  <Image src={laserCutDone} alt="Chassis base after laser cutting" />
+  <figcaption>Completed Chassis Plate — after laser cutting</figcaption>
+</figure>
 
 ### 3D Printed PETG Enclosures & Mounts
 *   **Venting & Enclosures**: Interlocking PETG shells printed on an Elegoo Neptune 4 Max to contain motor drivers, regulators, and sensors.
@@ -77,30 +88,34 @@ The hybrid fabrication strategy mapped specific materials and manufacturing meth
     *   **Slicing Details**: Ultimaker Cura slicer with brim support active to completely eliminate warping.
     *   **Local Reinforcements**: Critical stress zones like screw bosses and cable pass-through slots were printed with increased wall thickness (2.4 mm) for extra durability.
 
-<CardGrid>
-  <Card title="3D Printed Upper Enclosures">
-    ![3D printed upper shell parts](../../assets/images/AgriML_77_Page_62_Image_0001.jpg)
-  </Card>
-  <Card title="3D Printed Probe Bracket">
-    ![Probe mount and sensor housing printed](../../assets/images/AgriML_77_Page_63_Image_0001.jpg)
-  </Card>
-  <Card title="Probe Mount Assembly CAD">
-    ![Probe mount CAD assembly](../../assets/images/AgriML_77_Page_47_Image_0001.jpg)
-  </Card>
-</CardGrid>
+<figure>
+  <Image src={petgEnclosures} alt="3D printed upper shell parts" />
+  <figcaption>3D Printed Upper Enclosures</figcaption>
+</figure>
+
+<figure>
+  <Image src={probeBracket} alt="Probe mount and sensor housing printed" />
+  <figcaption>3D Printed Probe Bracket</figcaption>
+</figure>
+
+<figure>
+  <Image src={probeMountCad} alt="Probe mount CAD assembly" />
+  <figcaption>Probe Mount Assembly CAD</figcaption>
+</figure>
 
 ### Modular Leg & Shoulder Actuator Assemblies
 *   **Shoulder Cap**: Magnetically mounted shoulder enclosure with neodymium magnets for tool-less drive gear checks.
 *   **Distal Lock**: 3D-printed split-piece locking block to lock the brushless hub wheel shaft firmly without adhesives.
 
-<CardGrid>
-  <Card title="Magnetically Mounted Shoulder Cap">
-    ![Magnetically mounted shoulder cap enclosure](../../assets/images/AgriML_77_Page_64_Image_0001.jpg)
-  </Card>
-  <Card title="Locking Block & Leg Module">
-    ![Split-piece locking block for hub wheel shaft](../../assets/images/AgriML_77_Page_65_Image_0001.jpg)
-  </Card>
-</CardGrid>
+<figure>
+  <Image src={shoulderCap} alt="Magnetically mounted shoulder cap enclosure" />
+  <figcaption>Magnetically Mounted Shoulder Cap</figcaption>
+</figure>
+
+<figure>
+  <Image src={lockingBlock} alt="Split-piece locking block for hub wheel shaft" />
+  <figcaption>Locking Block & Leg Module</figcaption>
+</figure>
 
 ---
 
@@ -136,8 +151,10 @@ After assembly, physical measurements were recorded using digital calipers and i
 | **Structural Fasteners Integrity** | Safe | No bolt loosening or shear | **Valid (Nylock secure)** |
 | **PETG Frame Softening** | Safe | Structural shape retained | **Valid (No warping)** |
 
-*   **Completed Leg Assembly**:
-    ![Figure 3.32: Completed leg module with Nylock fasteners](../../assets/images/AgriML_77_Page_65_Image_0002.jpg)
+<figure>
+  <Image src={legAssembled} alt="Completed leg module with Nylock fasteners" />
+  <figcaption>Figure 3.32: Completed leg module with Nylock fasteners</figcaption>
+</figure>
 
 ---
 

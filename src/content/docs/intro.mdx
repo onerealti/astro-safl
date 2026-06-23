@@ -6,19 +6,41 @@ banner:
 ---
 
 import { CardGrid, Card, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+import cadOverview from '../../assets/images/AgriML_77_Page_34_Image_0001.jpg';
+import topLeftRender from '../../assets/images/AgriML_77_Page_46_Image_0001.jpg';
+import internalCutaway from '../../assets/images/AgriML_77_Page_36_Image_0001.jpg';
+import chassisBase from '../../assets/images/AgriML_77_Page_35_Image_0001.jpg';
+import legInclined from '../../assets/images/AgriML_77_Page_42_Image_0001.jpg';
+import legNeutral from '../../assets/images/AgriML_77_Page_42_Image_0002.jpg';
+import legDownhill from '../../assets/images/AgriML_77_Page_43_Image_0001.jpg';
+import explodedLeg from '../../assets/images/AgriML_77_Page_37_Image_0001.jpg';
+import legHubMotor from '../../assets/images/AgriML_77_Page_38_Image_0001.jpg';
+import torsionalSpring from '../../assets/images/AgriML_77_Page_39_Image_0001.jpg';
+import shinInner from '../../assets/images/AgriML_77_Page_39_Image_0002.jpg';
+import shinOuter from '../../assets/images/AgriML_77_Page_40_Image_0001.jpg';
+import thighInner from '../../assets/images/AgriML_77_Page_40_Image_0002.jpg';
+import thighOuter from '../../assets/images/AgriML_77_Page_41_Image_0001.jpg';
+import shinWheel from '../../assets/images/AgriML_77_Page_41_Image_0002.jpg';
+import prototypeAssembly from '../../assets/images/gallery/completed-prototype-assembly.jpg';
+import labWorkbench from '../../assets/images/gallery/laboratory-assembly-workbench.jpg';
+import internalCompartments from '../../assets/images/gallery/chassis-internal-compartments.jpg';
+import earlyTraversal from '../../assets/images/gallery/early-prototype-traversal.jpeg';
 
 ## Project Abstract
 
 The **Smart Agri Four Legged Bot** is a semi-autonomous agricultural robot designed to support precision farming through automated weed detection and in-situ soil condition monitoring. The project emphasizes modularity, mechanical reliability, and ease of maintenance under real-world agricultural constraints.
 
-<CardGrid>
-  <Card title="Symmetrical CAD Overview">
-    ![Isometric CAD view of the complete robot](../../assets/images/AgriML_77_Page_34_Image_0001.jpg)
-  </Card>
-  <Card title="Top-Left Render View">
-    ![Final CAD render, top-left view](../../assets/images/AgriML_77_Page_46_Image_0001.jpg)
-  </Card>
-</CardGrid>
+<figure>
+  <Image src={cadOverview} alt="Isometric CAD view of the complete robot" />
+  <figcaption>Symmetrical CAD Overview — isometric view of the complete robot</figcaption>
+</figure>
+
+<figure>
+  <Image src={topLeftRender} alt="Final CAD render, top-left view" />
+  <figcaption>Top-Left Render View — final CAD render</figcaption>
+</figure>
 
 The robot is engineered around a hybrid fabrication approach:
 
@@ -101,14 +123,15 @@ graph TD
 
 The internal layout was designed to separate data processing units from high-current power electronics to minimize EMI and facilitate thermal convection.
 
-<CardGrid>
-  <Card title="Internal Layout Cutaway">
-    ![Internal cutaway showing battery and boards](../../assets/images/AgriML_77_Page_36_Image_0001.jpg)
-  </Card>
-  <Card title="Bottom View with Stiffeners">
-    ![Chassis base plate with reinforcement stiffeners](../../assets/images/AgriML_77_Page_35_Image_0001.jpg)
-  </Card>
-</CardGrid>
+<figure>
+  <Image src={internalCutaway} alt="Internal cutaway showing battery and boards" />
+  <figcaption>Internal Layout Cutaway — battery pack and board placement</figcaption>
+</figure>
+
+<figure>
+  <Image src={chassisBase} alt="Chassis base plate with reinforcement stiffeners" />
+  <figcaption>Bottom View with Stiffeners — chassis base plate reinforcement</figcaption>
+</figure>
 
 ---
 
@@ -118,13 +141,13 @@ The robot's planar legs are articulated in three segments, allowing the body to 
 
 <Tabs>
   <TabItem label="Left Side (Inclined Stance)">
-    ![Left side view of bot in inclined posture](../../assets/images/AgriML_77_Page_42_Image_0001.jpg)
+    <Image src={legInclined} alt="Left side view of bot in inclined posture" />
   </TabItem>
   <TabItem label="Right Side (Neutral Stance)">
-    ![Right side view of bot in neutral posture](../../assets/images/AgriML_77_Page_42_Image_0002.jpg)
+    <Image src={legNeutral} alt="Right side view of bot in neutral posture" />
   </TabItem>
   <TabItem label="Downhill Traversal (Extended Stance)">
-    ![Extended leg layout for downhill travel](../../assets/images/AgriML_77_Page_43_Image_0001.jpg)
+    <Image src={legDownhill} alt="Extended leg layout for downhill travel" />
   </TabItem>
 </Tabs>
 
@@ -137,40 +160,41 @@ Each planar leg is engineered as a modular three-joint assembly (Hip, Knee, and 
 
 <Tabs>
   <TabItem label="Leg Assembly CAD">
-    <CardGrid>
-      <Card title="Exploded Leg-Wheel Joint">
-        ![Exploded view of leg-wheel assembly](../../assets/images/AgriML_77_Page_37_Image_0001.jpg)
-      </Card>
-      <Card title="Leg Module & Hub Motor">
-        ![Leg module with distal hub motor](../../assets/images/AgriML_77_Page_38_Image_0001.jpg)
-      </Card>
-      <Card title="Torsional Compliance Spring">
-        ![Torsional spring compliance joint](../../assets/images/AgriML_77_Page_39_Image_0001.jpg)
-      </Card>
-    </CardGrid>
+    <figure>
+      <Image src={explodedLeg} alt="Exploded view of leg-wheel assembly" />
+      <figcaption>Exploded Leg-Wheel Joint</figcaption>
+    </figure>
+    <figure>
+      <Image src={legHubMotor} alt="Leg module with distal hub motor" />
+      <figcaption>Leg Module & Hub Motor</figcaption>
+    </figure>
+    <figure>
+      <Image src={torsionalSpring} alt="Torsional spring compliance joint" />
+      <figcaption>Torsional Compliance Spring</figcaption>
+    </figure>
   </TabItem>
   <TabItem label="Internal Shin Routing Paths">
-    <CardGrid>
-      <Card title="Shin Inner Spline Slot">
-        ![Shin internal channel split 1](../../assets/images/AgriML_77_Page_39_Image_0002.jpg)
-      </Card>
-      <Card title="Shin Outer Lock Seat">
-        ![Shin internal channel split 2](../../assets/images/AgriML_77_Page_40_Image_0001.jpg)
-      </Card>
-    </CardGrid>
+    <figure>
+      <Image src={shinInner} alt="Shin internal channel split 1" />
+      <figcaption>Shin Inner Spline Slot</figcaption>
+    </figure>
+    <figure>
+      <Image src={shinOuter} alt="Shin internal channel split 2" />
+      <figcaption>Shin Outer Lock Seat</figcaption>
+    </figure>
   </TabItem>
   <TabItem label="Internal Thigh Routing Paths">
-    <CardGrid>
-      <Card title="Thigh Inner Spline Slot">
-        ![Thigh internal channel split 1](../../assets/images/AgriML_77_Page_40_Image_0002.jpg)
-      </Card>
-      <Card title="Thigh Outer Lock Seat">
-        ![Thigh internal channel split 2](../../assets/images/AgriML_77_Page_41_Image_0001.jpg)
-      </Card>
-    </CardGrid>
+    <figure>
+      <Image src={thighInner} alt="Thigh internal channel split 1" />
+      <figcaption>Thigh Inner Spline Slot</figcaption>
+    </figure>
+    <figure>
+      <Image src={thighOuter} alt="Thigh internal channel split 2" />
+      <figcaption>Thigh Outer Lock Seat</figcaption>
+    </figure>
   </TabItem>
   <TabItem label="Shin to Wheel Joint Assembled">
-    ![Distal shin assembled with hub wheel](../../assets/images/AgriML_77_Page_41_Image_0002.jpg)
+    <Image src={shinWheel} alt="Distal shin assembled with hub wheel" />
   </TabItem>
 </Tabs>
 
@@ -211,17 +235,22 @@ Each planar leg is engineered as a modular three-joint assembly (Hip, Knee, and 
 
 Below are selected high-resolution photographs taken during the assembly and field testing phase of the physical prototype:
 
-<CardGrid>
-  <Card title="Completed Prototype Assembly">
-    ![Smart Agri Four Legged Bot](../../assets/images/gallery/completed-prototype-assembly.jpg)
-  </Card>
-  <Card title="Laboratory Assembly Workbench">
-    ![Student Team Work Session](../../assets/images/gallery/laboratory-assembly-workbench.jpg)
-  </Card>
-  <Card title="Internal Compartments Layout">
-    ![Chassis Internal Compartment Layout](../../assets/images/gallery/chassis-internal-compartments.jpg)
-  </Card>
-  <Card title="Early Prototype Stage">
-    ![First-Phase Prototype Traversal Check](../../assets/images/gallery/early-prototype-traversal.jpeg)
-  </Card>
-</CardGrid>
+<figure>
+  <Image src={prototypeAssembly} alt="Smart Agri Four Legged Bot completed prototype" />
+  <figcaption>Completed Prototype Assembly</figcaption>
+</figure>
+
+<figure>
+  <Image src={labWorkbench} alt="Student team at laboratory assembly workbench" />
+  <figcaption>Laboratory Assembly Workbench</figcaption>
+</figure>
+
+<figure>
+  <Image src={internalCompartments} alt="Chassis internal compartments layout" />
+  <figcaption>Internal Compartments Layout</figcaption>
+</figure>
+
+<figure>
+  <Image src={earlyTraversal} alt="Early prototype traversal check" />
+  <figcaption>Early Prototype Stage — first-phase traversal check</figcaption>
+</figure>

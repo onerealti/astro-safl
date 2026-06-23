@@ -4,6 +4,17 @@ description: NVIDIA Jetson Nano edge AI configuration, real-time CNN weed detect
 ---
 
 import { CardGrid, Card, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+import jetsonNano from '../../assets/images/AgriML_77_Page_71_Image_0001.jpg';
+import realSenseCamera from '../../assets/images/AgriML_77_Page_73_Image_0001.jpg';
+import weedBboxes from '../../assets/images/AgriML_77_Page_72_Image_0001.jpg';
+import maizeCrop from '../../assets/images/AgriML_77_Page_75_Image_0001.jpg';
+import weedSegments from '../../assets/images/AgriML_77_Page_75_Image_0002.jpg';
+import plaBasePlate from '../../assets/images/AgriML_77_Page_66_Image_0001.jpg';
+import powerSwitching from '../../assets/images/AgriML_77_Page_67_Image_0001.jpg';
+import cableRouting from '../../assets/images/AgriML_77_Page_69_Image_0001.jpg';
+import probeMountRear from '../../assets/images/AgriML_77_Page_68_Image_0001.jpg';
 
 This document summarizes the edge machine learning (ML) pipeline benchmarks, hardware-software configurations, and chassis electrical integration setup of the **Smart Agri Four Legged Bot**.
 
@@ -28,14 +39,15 @@ flowchart LR
     *   **Interface**: USB 3.0
     *   **Mounting Alignment**: Centered on chassis axis, pitched downward at **10°** (optimized from 15° to cover near-field crop zone between the front wheels)
 
-<CardGrid>
-  <Card title="NVIDIA Jetson Nano SBC">
-    ![NVIDIA Jetson Nano core single board computer](../../assets/images/AgriML_77_Page_71_Image_0001.jpg)
-  </Card>
-  <Card title="Intel RealSense D435 Camera">
-    ![Intel RealSense D435 perception camera module](../../assets/images/AgriML_77_Page_73_Image_0001.jpg)
-  </Card>
-</CardGrid>
+<figure>
+  <Image src={jetsonNano} alt="NVIDIA Jetson Nano core single board computer" />
+  <figcaption>NVIDIA Jetson Nano SBC</figcaption>
+</figure>
+
+<figure>
+  <Image src={realSenseCamera} alt="Intel RealSense D435 perception camera module" />
+  <figcaption>Intel RealSense D435 Camera</figcaption>
+</figure>
 
 ---
 
@@ -56,13 +68,13 @@ The weed detection task uses a lightweight Convolutional Neural Network (CNN) tr
 
 <Tabs>
   <TabItem label="Weed Bounding Boxes">
-    ![Real-time weed detection and bounding boxes](../../assets/images/AgriML_77_Page_72_Image_0001.jpg)
+    <Image src={weedBboxes} alt="Real-time weed detection and bounding boxes" />
   </TabItem>
   <TabItem label="Maize Crop Detection">
-    ![Real-time maize crop detection on Jetson Nano](../../assets/images/AgriML_77_Page_75_Image_0001.jpg)
+    <Image src={maizeCrop} alt="Real-time maize crop detection on Jetson Nano" />
   </TabItem>
   <TabItem label="Selective Weed Segments">
-    ![Selective weed detection using visual bounding box borders](../../assets/images/AgriML_77_Page_75_Image_0002.jpg)
+    <Image src={weedSegments} alt="Selective weed detection using visual bounding box borders" />
   </TabItem>
 </Tabs>
 
@@ -106,20 +118,25 @@ To prevent camera shake from causing image blur and ML misclassifications, the r
 
 A structured electrical base plate separates signal lines and motor supplies.
 
-<CardGrid>
-  <Card title="PLA Component Mounting Base Plate">
-    ![PLA component mounting base plate](../../assets/images/AgriML_77_Page_66_Image_0001.jpg)
-  </Card>
-  <Card title="Internal Power & Switching Layout">
-    ![Power supply and switching circuits inside chassis](../../assets/images/AgriML_77_Page_67_Image_0001.jpg)
-  </Card>
-  <Card title="Top-Down Cable Routing Layout">
-    ![Top-down view of wire layout with fasteners](../../assets/images/AgriML_77_Page_69_Image_0001.jpg)
-  </Card>
-  <Card title="Rear Probe Mounting Position">
-    ![Rear mount installation for Amici probe](../../assets/images/AgriML_77_Page_68_Image_0001.jpg)
-  </Card>
-</CardGrid>
+<figure>
+  <Image src={plaBasePlate} alt="PLA component mounting base plate" />
+  <figcaption>PLA Component Mounting Base Plate</figcaption>
+</figure>
+
+<figure>
+  <Image src={powerSwitching} alt="Power supply and switching circuits inside chassis" />
+  <figcaption>Internal Power & Switching Layout</figcaption>
+</figure>
+
+<figure>
+  <Image src={cableRouting} alt="Top-down view of wire layout with fasteners" />
+  <figcaption>Top-Down Cable Routing Layout</figcaption>
+</figure>
+
+<figure>
+  <Image src={probeMountRear} alt="Rear mount installation for Amici probe" />
+  <figcaption>Rear Probe Mounting Position</figcaption>
+</figure>
 
 ### Actuation & Low-Level Control Architecture
 
