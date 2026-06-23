@@ -56,7 +56,7 @@ export default defineConfig({
                     { label: 'FEA Simulations', link: '/structural-simulation/' },
                     { label: 'Edge ML Pipeline', link: '/ml-vision/' },
                 ],
-                footerText: 'Built & designed by [Murtaza Ahmed](https://www.linkedin.com/in/murahmed/).',
+                footerText: 'Designed & built by [Murtaza Ahmed](https://www.linkedin.com/in/murahmed/).',
             }),
             starlightBasePath(),
             starlightImageZoom(),
