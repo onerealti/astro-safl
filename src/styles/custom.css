@@ -77,6 +77,25 @@ figure > picture > img {
   height: auto;
 }
 
+/* ─── Mobile Drawer Menu Auto-sizing ────────────────────────────────────── */
+#drawer .content {
+  height: auto !important;
+  max-height: 85vh !important;
+}
+
+#drawer .body {
+  height: auto !important;
+  max-height: calc(85vh - 3rem) !important;
+  overflow-y: auto !important;
+}
+
+/* Hide duplicate navigation links in the mobile drawer */
+#drawer .links-nav a:not(:first-child) {
+  display: none !important;
+}
+
+
+
 
 
 
