@@ -58,6 +58,13 @@ export default defineConfig({
                     title: 'Documentation for LLMs',
                 },
             },
+            {
+                tag: 'meta',
+                attrs: {
+                    name: 'google-site-verification',
+                    content: 'lOCoqLI1juHZy60Lez2rNcVK0w_F6R06VXj7cv87WWw',
+                },
+            },
         ],
         plugins: [
             starlightThemeBlack({
