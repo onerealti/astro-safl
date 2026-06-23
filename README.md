@@ -1,49 +1,68 @@
-# Starlight Starter Kit: Basics
+# Smart Agri Four Legged Bot (S.A.F.L)
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+S.A.F.L (Smart Agri Four Legged Bot) is a semi-autonomous agricultural robot designed for precision farming. The system integrates advanced mechanical structure design validated through Finite Element Analysis (FEA), local real-time convolutional neural network (CNN) inference for weed classification, and automated chemical soil parameter telemetry.
 
-```
-pnpm create astro@latest -- --template starlight
-```
+This repository hosts the official documentation, research papers, and technical validation reports built using **Astro Starlight** with a premium dark system-themed interface.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🚀 Key Engineering Pillars
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+*   **Structural Integrity (FEA)**: Validated base plate and leg linkages using SolidWorks FEA static, lateral bump, and probe resistance load cases with a minimum Safety Factor (FOS) of **2.04**.
+*   **Edge Machine Learning**: Real-time broad-leaf weed detection utilizing a lightweight CNN model deployed locally on an **NVIDIA Jetson Nano** processing input streams at up to **9.2 FPS**.
+*   **Soil Telemetry Pipeline**: Modular environmental sensing system using the **Amici Sense** multi-parameter soil probe (measuring moisture, pH, EC, temperature, light, and humidity) over UART interface.
+*   **Institutional Framework**: Developed at the Department of Mechanical Engineering, **Muffakham Jah College of Engineering and Technology (MJCET)**, Hyderabad, India (Affiliated to Osmania University). Winner of **1st Place** at the MAKEFORHYDERABAD Make-a-thon.
+
+---
+
+## 📁 Project Structure
+
+The documentation codebase is structured as follows:
 
 ```
 .
-├── public/
+├── public/                     # Static resources, icons, and site assets
 ├── src/
-│   ├── assets/
+│   ├── assets/                 # CAD renders, FEA plot diagrams, and photos
+│   ├── components/             # Custom Astro component overrides (Hero, MarkdownContent)
 │   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+│   │   ├── docs/               # Markdown/MDX technical reports
+│   │   │   ├── credentials.mdx  # Academic oversight, guides, and hackathon awards
+│   │   │   ├── index.mdx        # Project landing/splash page
+│   │   │   ├── intro.mdx        # Bot architecture and coordinate systems
+│   │   │   ├── mechanical-assembly.mdx  # Fabrication setups andElegoo Neptune printing specs
+│   │   │   ├── ml-vision.mdx    # Jetson Nano setup, CNN latency, and confidence filters
+│   │   │   ├── project-report.mdx # R&D Cell completion report summary
+│   │   │   ├── soil-telemetry.mdx # Level-shifted serial telemetry log datasets
+│   │   │   └── structural-simulation.mdx # Mesh metrics and Von Mises load case analysis
+│   │   └── config.ts           # Starlight content collections schema
+│   └── styles/
+│       └── custom.css          # Custom styling and typography overrides
+├── astro.config.mjs            # Astro, Starlight, and plugin integrations config
+├── package.json                # Project dependencies
+└── pnpm-lock.yaml              # Lockfile
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+---
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## 🛠️ Commands
 
-Static assets, like favicons, can be placed in the `public/` directory.
+Execute all terminal commands from the project root directory:
 
-## 🧞 Commands
+| Command | Action |
+| :--- | :--- |
+| `pnpm install` | Installs project dependencies |
+| `pnpm dev` | Starts the local hot-reloading development server |
+| `pnpm build` | Compiles the production site output to `./dist/` |
+| `pnpm preview` | Serves the built production bundle locally |
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 💻 Tech Stack & Starlight Plugins
 
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+*   **Astro Starlight**: Documentation framework.
+*   **starlight-theme-black**: Minimalist dark design system with custom page transitions.
+*   **starlight-image-zoom**: Rehype-based medium-zoom image overlay component.
+*   **KaTeX & Remark Math**: Native LaTeX syntax support for mathematical formulations and stress tensor equations.
+*   **Mermaid.js**: Render structural flowcharts, control hierarchies, and coordinate systems in markdown.
+*   **Native System Font Stack**: Leverages zero-latency local system font rendering (San Francisco, Segoe UI, Roboto) for a fast, native desktop app feel.
