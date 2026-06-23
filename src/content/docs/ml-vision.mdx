@@ -3,7 +3,7 @@ title: Edge ML Vision Pipeline
 description: NVIDIA Jetson Nano edge AI configuration, real-time CNN weed detection benchmarks, camera stabilization, and signal wiring integration.
 ---
 
-import { CardGrid, Card, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Card, Tabs, TabItem } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 import jetsonNano from '../../assets/images/AgriML_77_Page_71_Image_0001.jpg';
@@ -86,7 +86,7 @@ To prevent camera shake from causing image blur and ML misclassifications, the r
 
 ### Mechanical Countermeasures
 
-<CardGrid>
+
   <Card title="Vibration Isolators" icon="setting">
     Integrated rubber washers on all camera bracket bolt threads to absorb high-frequency chassis rattle.
   </Card>
@@ -96,11 +96,11 @@ To prevent camera shake from causing image blur and ML misclassifications, the r
   <Card title="Balance Counterweights" icon="setting">
     Geometrically balanced motor shaft mounts to minimize rotational resonance during locomotion.
   </Card>
-</CardGrid>
+
 
 ### Software Countermeasures
 
-<CardGrid>
+
   <Card title="RealSense Frame Averaging" icon="laptop">
     Averages consecutive depth frames to eliminate high-frequency visual and depth noise.
   </Card>
@@ -110,7 +110,7 @@ To prevent camera shake from causing image blur and ML misclassifications, the r
   <Card title="Sensor Telemetry Sync" icon="laptop">
     Halts locomotion motors during soil probe insertion to completely eliminate vibration noise during telemetry transmission.
   </Card>
-</CardGrid>
+
 
 ---
 

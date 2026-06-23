@@ -1,11 +1,9 @@
 ---
 title: System Introduction
 description: System introduction, objectives, and architecture overview of the Smart Agri Four Legged Bot.
-banner:
-  content: "🎉 SAFL-Bot R&D Project Completion Report (2024–2025) is now online!"
 ---
 
-import { CardGrid, Card, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+import { Card, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 import cadOverview from '../../assets/images/AgriML_77_Page_34_Image_0001.jpg';
@@ -202,7 +200,7 @@ Each planar leg is engineered as a modular three-joint assembly (Hip, Knee, and 
 
 ## Key Hardware Summary
 
-<CardGrid>
+
   <Card title="NVIDIA Jetson Nano" icon="laptop">
     * **Specification**: Embedded GPU computer (Ubuntu 18.04 + PyTorch)
     * **Purpose**: Runs CNN weed detection, logs soil data, sends movement commands.
@@ -227,7 +225,7 @@ Each planar leg is engineered as a modular three-joint assembly (Hip, Knee, and 
     * **Specification**: 2x 36V 350W direct-drive wheels
     * **Purpose**: Distal foot units providing primary forward and reverse locomotion.
   </Card>
-</CardGrid>
+
 
 ---
 

@@ -8,6 +8,7 @@ import rehypeKatex from 'rehype-katex';
 
 import { unified } from '@astrojs/markdown-remark';
 import starlightImageZoom from 'starlight-image-zoom';
+import starlightThemeBlack from 'starlight-theme-black';
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,6 +25,10 @@ export default defineConfig({
     integrations: [starlight({
         title: 'S.A.F.L',
         customCss: ['./src/styles/custom.css'],
+        components: {
+            MarkdownContent: './src/components/MarkdownContent.astro',
+            Hero: './src/components/Hero.astro',
+        },
         head: [
             {
                 tag: 'link',
@@ -44,7 +49,18 @@ export default defineConfig({
                 content: "window.addEventListener('DOMContentLoaded', () => { if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' }); } });",
             },
         ],
-        plugins: [starlightBasePath(), starlightImageZoom()],
+        plugins: [
+            starlightThemeBlack({
+                navLinks: [
+                    { label: 'System Overview', link: '/intro/' },
+                    { label: 'FEA Simulations', link: '/structural-simulation/' },
+                    { label: 'Edge ML Pipeline', link: '/ml-vision/' },
+                ],
+                footerText: 'Built & designed by [Murtaza Ahmed](https://www.linkedin.com/in/murahmed/).',
+            }),
+            starlightBasePath(),
+            starlightImageZoom(),
+        ],
         social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/onerealti/astro-safl' }],
         editLink: {
             baseUrl: 'https://github.com/onerealti/astro-safl/edit/main/',

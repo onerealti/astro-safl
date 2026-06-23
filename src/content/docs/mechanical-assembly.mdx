@@ -3,7 +3,7 @@ title: Mechanical Fabrication & Assembly
 description: Material procurement, 3D printing configurations, physical assembly details, field correlation, and traversal testing.
 ---
 
-import { CardGrid, Card, Badge, Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+import { Card, Badge, Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 import laserCutSetup from '../../assets/images/AgriML_77_Page_61_Image_0001.jpg';
@@ -27,7 +27,7 @@ To bridge simulation and physical reality, the robot chassis base and key suppor
 
 The hybrid fabrication strategy mapped specific materials and manufacturing methods to their structural or environmental needs. Below is the responsive component breakdown:
 
-<CardGrid>
+
   <Card title="Chassis Frame">
     *   **Material**: Mild Steel
     *   **Method**: CNC cut + manual welding
@@ -63,7 +63,7 @@ The hybrid fabrication strategy mapped specific materials and manufacturing meth
     *   **Method**: Manual assembly
     *   **Structural Justification**: Interconnects power rails and signal lines with EMI shielding.
   </Card>
-</CardGrid>
+
 
 ### Chassis Plate Laser Cut Execution
 *   **Chassis Plate**: CNC laser-cut 3mm mild steel sheet, finished with anti-rust black primer and matte coating.
@@ -123,7 +123,7 @@ The hybrid fabrication strategy mapped specific materials and manufacturing meth
 
 During the physical fabrication and calibration of the prototype, the team resolved several real-world engineering issues:
 
-<CardGrid>
+
   <Card title="Leg Clearance Mismatch" icon="warning">
     * **Root Cause**: Dimensional variation in raw hub motor shafts.
     * **Solution Applied**: Adjusted the CAD files with a small offset and reprinted the brackets.
@@ -136,7 +136,7 @@ During the physical fabrication and calibration of the prototype, the team resol
     * **Root Cause**: Cyclic resonance during drive motor tests.
     * **Solution Applied**: Applied Loctite thread locker and switched to Nylock nuts on critical fasteners.
   </Card>
-</CardGrid>
+
 
 ---
 

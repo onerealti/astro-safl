@@ -3,7 +3,7 @@ title: FEA Load Simulations
 description: Finite Element Analysis (FEA) variables, SolidWorks setup, simulation load cases, and structural factor of safety.
 ---
 
-import { CardGrid, Card, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Card, Tabs, TabItem } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 import vonMisesStatic from '../../assets/images/AgriML_77_Page_52_Image_0001.jpg';
 import strainLateral from '../../assets/images/AgriML_77_Page_53_Image_0001.jpg';
@@ -23,7 +23,7 @@ Simulations were performed using a solid tetrahedral mesh model in SolidWorks Si
 
 ### Material Input Variables
 
-<CardGrid>
+
   <Card title="Mild Steel" icon="setting">
     * **Used For**: Central chassis base, structural rib reinforcement plates
     * **Yield Strength**: 220–250 MPa
@@ -48,7 +48,7 @@ Simulations were performed using a solid tetrahedral mesh model in SolidWorks Si
     * **Young's Modulus**: 0.01 GPa
     * **Poisson's Ratio**: 0.45
   </Card>
-</CardGrid>
+
 
 ### Mesh Density Metrics
 
@@ -155,7 +155,7 @@ graph LR
 
 Based on the FEA results, several structural optimizations were identified to improve future design revisions:
 
-<CardGrid>
+
   <Card title="Leg-to-frame flange" icon="warning">
     * **Current Status**: Single thickness plate
     * **Suggested Design Improvement**: Add gusset plate or tapered transition to improve lateral bending resistance.
@@ -172,4 +172,4 @@ Based on the FEA results, several structural optimizations were identified to im
     * **Current Status**: Decorative X-pattern cutouts
     * **Suggested Design Improvement**: Add minor rounding to inner corners to lower localized stress spikes.
   </Card>
-</CardGrid>
+

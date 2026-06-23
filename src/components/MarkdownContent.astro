@@ -1,0 +1,30 @@
+---
+// Merged MarkdownContent override:
+// - starlight-theme-black's wrapper (markdown-wrapper + sl-markdown-content)
+// - starlight-image-zoom's ImageZoom component
+// - homepage container wrap fix (if hasSidebar is false, we wrap in container)
+import '@astrojs/starlight/style/markdown.css';
+import ImageZoom from 'starlight-image-zoom/components/ImageZoom.astro';
+
+const { hasSidebar } = Astro.locals.starlightRoute;
+---
+
+<ImageZoom />
+
+{hasSidebar ? (
+  <div class="markdown-wrapper">
+    <div class="sl-markdown-content">
+      <slot />
+    </div>
+  </div>
+) : (
+  <div class="container-wrapper">
+    <div class="container container-padding">
+      <div class="markdown-wrapper">
+        <div class="sl-markdown-content">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </div>
+)}

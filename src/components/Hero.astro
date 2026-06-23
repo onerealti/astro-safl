@@ -1,0 +1,259 @@
+---
+import { Image } from 'astro:assets'
+import LinkButton from '../../node_modules/starlight-theme-black/src/components/LinkButton.astro'
+
+const { data } = Astro.locals.starlightRoute.entry
+const { title = data.title, tagline, image, actions = [] } = data.hero || {}
+
+const imageAttrs = {
+  loading: 'eager' as const,
+  decoding: 'async' as const,
+  width: 500,
+  height: 500,
+  alt: image?.alt || '',
+}
+
+let darkImage: ImageMetadata | undefined
+let lightImage: ImageMetadata | undefined
+let rawHtml: string | undefined
+if (image) {
+  if ('file' in image) {
+    darkImage = image.file
+  } else if ('dark' in image) {
+    darkImage = image.dark
+    lightImage = image.light
+  } else {
+    rawHtml = image.html
+  }
+}
+---
+
+<div class="container-section hero-section">
+  <div class="container-wrapper">
+    <div class="container hero-container">
+      
+      <!-- Text content -->
+      <div class="hero-text-content">
+        <h1 class="title" id="_top" data-page-title set:html={title} />
+        {tagline && <p class="tagline" set:html={tagline} />}
+        {
+          actions.length > 0 && (
+            <div class="actions">
+              {actions.map(({ attrs: { class: className, ...attrs } = {}, icon, link: href, text, variant }) => (
+                <LinkButton {href} {variant} class:list={["hero-btn", className]} {...attrs}>
+                  {text}
+                  {icon?.html && <Fragment set:html={icon.html} />}
+                </LinkButton>
+              ))}
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Image / Graphic content -->
+      <div class="hero-image-wrapper">
+        <div class="ambient-glow"></div>
+        <div class="image-inner">
+          {darkImage && <Image src={darkImage} {...imageAttrs} class:list={["hero-img", { 'light:sl-hidden': Boolean(lightImage) }]} />}
+          {lightImage && <Image src={lightImage} {...imageAttrs} class="hero-img dark:sl-hidden" />}
+          {rawHtml && <div class="hero-html sl-flex" set:html={rawHtml} />}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    position: relative;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-container {
+      grid-template-columns: 1.2fr 0.8fr;
+      padding-top: 6rem;
+      padding-bottom: 7rem;
+      gap: 4rem;
+    }
+  }
+
+  /* Text Content Styling */
+  .hero-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    z-index: 10;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+    color: var(--foreground);
+    text-wrap: balance;
+    margin: 0;
+    /* Rich aesthetic: text gradient using green accent */
+    background: linear-gradient(135deg, var(--foreground) 60%, var(--sl-color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (min-width: 768px) {
+    .title {
+      font-size: 3.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .title {
+      font-size: 4rem;
+    }
+  }
+
+  .tagline {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--muted-foreground);
+    max-width: 38rem;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .tagline {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Actions Buttons */
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Custom overrides for LinkButton inside hero to make it pop */
+  :global(.hero-btn) {
+    font-size: 0.9rem !important;
+    height: 2.75rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    border-radius: 0.375rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-weight: 600 !important;
+  }
+
+  :global(.hero-btn.primary) {
+    background-color: var(--sl-color-accent) !important;
+    color: var(--background) !important;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+  }
+
+  :global(.hero-btn.primary:hover) {
+    background-color: var(--sl-color-accent-high) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+  }
+
+  :global(.hero-btn.secondary) {
+    background-color: transparent !important;
+    border: 1px solid var(--border) !important;
+    color: var(--foreground) !important;
+  }
+
+  :global(.hero-btn.secondary:hover) {
+    background-color: var(--border) !important;
+    transform: translateY(-2px);
+    border-color: var(--sl-color-accent) !important;
+  }
+
+  /* Image Content Styling */
+  .hero-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image-inner {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(16, 185, 129, 0.15));
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @media (min-width: 768px) {
+    .hero-img {
+      max-width: 400px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-img {
+      max-width: 460px;
+    }
+  }
+
+  /* Glowing Green Ambient Light Background */
+  .ambient-glow {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.03) 40%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+    animation: pulse 8s ease-in-out infinite alternate;
+  }
+
+  /* Micro-animations */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 1.2;
+    }
+  }
+</style>

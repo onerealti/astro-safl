@@ -1,12 +1,79 @@
+/* ─── Accent colour ─────────────────────────────────────────────────────── */
 :root {
-  /* Starlight official theme green accent configuration variables */
   --sl-color-accent-low: #064e3b;
-  --sl-color-accent: #10b981;
-  --sl-color-accent-high: #a7f3d0;
+  --sl-color-accent:     #10b981;
+  --sl-color-accent-high:#a7f3d0;
 }
 
 :root[data-theme='light'] {
   --sl-color-accent-low: #a7f3d0;
-  --sl-color-accent: #059669;
-  --sl-color-accent-high: #064e3b;
+  --sl-color-accent:     #059669;
+  --sl-color-accent-high:#064e3b;
 }
+
+/* ─── Sidebar: fix overlapping entries caused by fixed height ───────────── */
+.entry-link {
+  height: auto !important;
+  min-height: 2rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  white-space: normal !important;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+/* ─── Sidebar: restyle badges to match the green accent ─────────────────── */
+.entry-badge {
+  background-color: color-mix(in srgb, var(--sl-color-accent) 15%, transparent) !important;
+  color: var(--sl-color-accent) !important;
+  border: 1px solid color-mix(in srgb, var(--sl-color-accent) 40%, transparent) !important;
+  border-radius: 4px !important;
+  font-size: 0.6rem !important;
+  font-family: var(--sl-font-mono) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  padding: 1px 5px !important;
+  margin-left: 0.35rem !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+
+/* ─── Figure / image captions ───────────────────────────────────────────── */
+figure {
+  margin: 1.5rem 0;
+}
+
+figure img,
+figure astro-image,
+figure img[data-astro-image] {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border, var(--sl-color-gray-6));
+  text-align: center;
+  font-size: var(--sl-text-sm);
+  color: var(--muted-foreground, var(--sl-color-gray-3));
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ─── Ensure <Image /> component renders full-width inside figures ───────── */
+figure > img,
+figure > picture > img {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: auto;
+}
+
+
+
+
