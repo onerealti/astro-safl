@@ -1,11 +1,11 @@
 ---
-title: ML Pipeline Benchmarks
-description: Machine learning inference metrics, computer vision setup, and soil probe telemetry.
+title: Edge ML Vision Pipeline
+description: NVIDIA Jetson Nano edge AI configuration, real-time CNN weed detection benchmarks, camera stabilization, and signal wiring integration.
 ---
 
 import { CardGrid, Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
-This document summarizes the edge machine learning (ML) pipeline benchmarks, hardware-software configurations, and soil probe telemetry data integrated into the **Smart Agri Four Legged Bot**.
+This document summarizes the edge machine learning (ML) pipeline benchmarks, hardware-software configurations, and chassis electrical integration setup of the **Smart Agri Four Legged Bot**.
 
 ---
 
@@ -21,15 +21,12 @@ flowchart LR
     Jetson -->|Logging| CSV["Local Data Log CSV"]
 `}</div>
 
-<script is:inline src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
-<script is:inline dangerouslySetInnerHTML={{ __html: "mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });" }}></script>
-
 *   **Central Processor**: **NVIDIA Jetson Nano** running Ubuntu 18.04 LTS (JetPack SDK)
 *   **Deep Learning Backend**: PyTorch
 *   **Primary Perception Sensor**: **Intel RealSense D435** depth camera
     *   **Data Channels**: RGB frames fused with Active Infrared Stereo depth maps
     *   **Interface**: USB 3.0
-    *   **Mounting Alignment**: Centered on chassis axis, pitched downward at **10°** (adjusted from 15° to optimize near-field crop zone coverage between the front wheels)
+    *   **Mounting Alignment**: Centered on chassis axis, pitched downward at **10°** (optimized from 15° to cover near-field crop zone between the front wheels)
 
 <CardGrid>
   <Card title="NVIDIA Jetson Nano SBC">
@@ -76,14 +73,32 @@ The weed detection task uses a lightweight Convolutional Neural Network (CNN) tr
 To prevent camera shake from causing image blur and ML misclassifications, the robot uses a dual mechanical-software stabilization strategy:
 
 ### Mechanical Countermeasures
-*   **Vibration Isolators**: Integrated rubber washers on all camera bracket bolt threads.
-*   **Damping Spacers**: High-density foam inserts underneath the battery pack and Jetson base plate.
-*   **Balance Counterweights**: Geometrically balanced motor shaft mounts to reduce rotational resonance.
+
+<CardGrid>
+  <Card title="Vibration Isolators" icon="setting">
+    Integrated rubber washers on all camera bracket bolt threads to absorb high-frequency chassis rattle.
+  </Card>
+  <Card title="Damping Spacers" icon="setting">
+    High-density foam inserts situated underneath the battery pack and Jetson base plate to dampen low-frequency bumps.
+  </Card>
+  <Card title="Balance Counterweights" icon="setting">
+    Geometrically balanced motor shaft mounts to minimize rotational resonance during locomotion.
+  </Card>
+</CardGrid>
 
 ### Software Countermeasures
-*   **RealSense Frame Averaging**: Averaging consecutive depth frames to eliminate high-frequency noise.
-*   **Confidence Filtering**: A **3-frame rolling average** is computed before confirming weed bounding box triggers.
-*   **Sensor Telemetry Sync**: Arduino halts locomotion motors during soil probe insertion to completely eliminate vibration noise during serial telemetry transmission.
+
+<CardGrid>
+  <Card title="RealSense Frame Averaging" icon="laptop">
+    Averages consecutive depth frames to eliminate high-frequency visual and depth noise.
+  </Card>
+  <Card title="Confidence Filtering" icon="laptop">
+    Computes a **3-frame rolling average** before confirming and executing weed bounding box triggers.
+  </Card>
+  <Card title="Sensor Telemetry Sync" icon="laptop">
+    Halts locomotion motors during soil probe insertion to completely eliminate vibration noise during telemetry transmission.
+  </Card>
+</CardGrid>
 
 ---
 
@@ -109,7 +124,7 @@ A structured electrical base plate separates signal lines and motor supplies.
 ### Actuation & Low-Level Control Architecture
 
 Precise and coordinated joint movements are managed using a dual-controller layout:
-*   **Low-Level Controller**: An **Arduino Due** acts as the dedicated real-time actuator controller. It is selected for its high-speed 32-bit ARM Cortex-M3 architecture (84 MHz clock frequency), 12 hardware PWM outputs, and multiple hardware serial (UART) interfaces.
+*   **Low-Level Controller**: An **Arduino Due** acts as the dedicated real-time actuator controller (84 MHz clock frequency, 12 hardware PWM outputs, and multiple hardware serial UART interfaces).
 *   **High-Level Interface**: Commands are received from the NVIDIA Jetson Nano over a dedicated serial connection running at **115,200 baud**. The Arduino Due parses these motion paths and translates them into PWM commands.
 *   **Actuators & Drivers**:
     *   **Geared DC Motors**: Four planetary geared units for shoulder articulation (driven via dual H-bridge motor drivers).
@@ -124,32 +139,7 @@ To prevent motor current draws from causing brownouts or logic resets on the Jet
 
 ### EMI Shielding & Signal Isolation
 
-To prevent electromagnetic interference (EMI) from the high-torque actuators from corrupting the low-voltage sensor lines (such as I2C, USB 3.0, and UART data):
+To prevent electromagnetic interference (EMI) from the high-torque actuators from corrupting the low-voltage sensor lines:
 *   **Perimeter Routing**: High-current motor lines are routed strictly along the outer edges of the chassis frame.
 *   **Central Data Channels**: Low-voltage signal lines are elevated and routed centrally.
 *   **Ferrite Suppression**: Ferrite beads are added to motor cable pairs, and all motor logic wires are shielded and grounded to establish common reference planes.
-
----
-
-## 5. Soil Probe Telemetry Data
-
-The **Amici Sense** soil analysis system logs soil parameters. telemetries are parsed via Python and combined with ML outputs in a CSV file.
-
-### Telemetry Hardware Integration
-*   **Power Rail**: 5V rail stepped down via DC-DC buck converter.
-*   **Data Bus**: Serial UART communication with Jetson Nano GPIO, utilizing level shifters to step 5V signals down to Jetson-safe 3.3V levels.
-*   **Response Time**: `< 5 seconds` per measurement cycle.
-
-### Field Logs (Three Consecutive Trials)
-
-| Measured Parameter | Trial A | Trial B | Trial C | Average | Unit |
-| :--- | :---: | :---: | :---: | :---: | :--- |
-| **Soil Moisture** | 13.2 | 12.9 | 13.5 | **13.20** | % |
-| **Soil pH** | 6.3 | 6.2 | 6.4 | **6.30** | — |
-| **Electrical Conductivity (EC)**| 478 | 484 | 470 | **477.33** | µS/cm |
-| **Soil Temperature** | 33.4 | 33.8 | 33.1 | **33.43** | °C |
-| **Sunlight Intensity** | 30,800 | 31,200 | 32,100 | **31,366.67** | Lux |
-| **Air Humidity** | 55.4 | 56.1 | 54.7 | **55.40** | % RH |
-
-> [!IMPORTANT]
-> The soil probe is automatically triggered to take readings when a stop command is issued following a confirmed weed classification. The combined payload of visual data and chemical soil telemetry is saved locally with timestamps for precision farming mapping.

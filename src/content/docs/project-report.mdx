@@ -1,0 +1,113 @@
+---
+title: R&D Project Completion Report
+description: Official Research and Development Cell Project Completion Report (2024-2025) for the Smart Agri Four Legged Bot.
+---
+
+import { CardGrid, Card, Badge } from '@astrojs/starlight/components';
+
+## Muffakham Jah College of Engineering & Technology
+*Department of Mechanical Engineering — Research & Development Cell*
+
+**Project Approval Status:** <Badge text="Approved" variant="success" />
+
+---
+
+## 1. Project Overview
+
+*   **Project Title:** Smart Agri Four Legged Bot
+*   **Department:** Mechanical Engineering Department
+*   **Academic Year:** 2024–2025
+*   **Project Guides:** 
+    *   **Dr. K. Hema Latha** (Associate Professor, MED)
+    *   **Dr. Uma N. Dulhare** (Professor, CSE)
+    *   **Mrs. B. Sucharitha** (Assistant Professor, ECE)
+
+---
+
+## 2. Project Team
+
+Below is the undergraduate student team associated with the project development:
+
+<CardGrid>
+  <Card title="Syed Murtaza Ahmed" icon="laptop">
+    *   **Hall Ticket:** 1604-24-736-017
+    *   **Role:** Principal System Architect (Core Electronics, Control Software, and ML Integration)
+  </Card>
+  <Card title="M. Zainul Abedin Kaleemi" icon="setting">
+    *   **Hall Ticket:** 1604-24-736-041
+    *   **Role:** CAD & Mechanical Design, Team-Faculty Coordinator
+  </Card>
+  <Card title="Mohammed Qubaib" icon="setting">
+    *   **Hall Ticket:** 1604-24-735-026
+    *   **Role:** Electrical System Wiring, Sensor Integration & Logistics Coordinator
+  </Card>
+  <Card title="Mohammed Muzzammil" icon="setting">
+    *   **Hall Ticket:** 1604-24-736-039
+    *   **Role:** CAD & Mechanical Design, Assembly Layout
+  </Card>
+  <Card title="Syed Faisal" icon="setting">
+    *   **Hall Ticket:** 1604-24-736-029
+    *   **Role:** Structural Fabrication, Assembly Operations & Logistics Coordinator
+  </Card>
+</CardGrid>
+
+---
+
+## 3. Project Objectives
+
+The project developed a semi-autonomous agricultural robot to support precision farming through automated weed detection and soil condition monitoring:
+
+*   **Reliability:** Create a reliable, field-deployable robotic system capable of basic environmental sensing and visual processing.
+*   **Practicality:** Design a modular and adaptable platform that is practical to fabricate, operate, and maintain under academic constraints.
+*   **Chassis Stability:** Implement a stable mechanical structure using a mild steel chassis and 3D-printed components, ensuring durability and suitability for agricultural terrain.
+*   **Sensor Integration:** Integrate advanced sensors, including a depth camera for weed detection and a soil probe for monitoring pH, moisture, light, and fertility.
+*   **Edge AI:** Deploy a lightweight convolutional neural network for real-time weed classification and analysis.
+*   **Power Distribution:** Establish efficient power distribution and structured wiring for reliable and consistent operation in field tests.
+
+---
+
+## 4. Abstract
+
+This project centers on developing a semi-autonomous agricultural robot to support precision farming through weed detection and soil condition monitoring. The goal was to design a dependable, field-ready system capable of basic sensing and visual processing, while remaining practical to build, operate, and maintain under academic limitations. The design emphasizes modularity and real-world usability, allowing future adaptability and upgrades.
+
+Mechanically, the robot uses a mild steel chassis with four wheeled-leg assemblies, prioritizing stability, ground clearance, and simple assembly for agricultural terrain. Structural parts were modeled in SolidWorks and tested with Finite Element Analysis (FEA) to verify load capacity and vibration resistance. Custom enclosures and sensor mounts were fabricated via FDM 3D printing using PETG and PLA+, resulting in a durable yet flexible framework suited for varied field conditions.
+
+On the electronics and software side, a Jetson Nano manages sensor integration and machine learning tasks. A RealSense D435 depth camera provides visual input, while an Amici Sense soil probe measures moisture, pH, light, and fertility. Weed detection is handled by a lightweight convolutional neural network deployed locally, with outputs logged in real time. Careful power management and wiring ensured reliable performance during testing. Together, these systems form a compact and intelligent platform capable of advancing scalable agricultural automation.
+
+---
+
+## 5. Methodology
+
+The implementation path combined simulation, structural engineering, software deployment, and field trials:
+
+*   **Design and Modelling:** The robot’s structure was designed in *SolidWorks* to ensure stability, ground clearance, and suitability for agricultural terrain. Key components were analyzed through *Finite Element Analysis (FEA)* to validate strength, load capacity, and vibration resistance.
+*   **Hybrid Fabrication:** The chassis and load-bearing parts were built using mild steel for robustness, while custom enclosures and sensor mounts were fabricated using *FDM 3D printing* with PETG and PLA+ to achieve a lightweight, adaptable framework.
+*   **Sensor Integration:** A *RealSense D435 depth camera* was employed for visual data collection, while an *Amici Sense soil probe* measured parameters such as moisture, pH, fertility, and light intensity.
+*   **Computing and Control:** A *Jetson Nano* single-board computer managed sensor fusion, image processing, and machine learning inference. Power distribution circuits and structured wiring ensured stable operation in field conditions.
+*   **Machine Learning & Image Processing:** A lightweight *Convolutional Neural Network (CNN)* was trained and deployed locally on the Jetson Nano for real-time weed detection and classification. Visual data was logged for performance analysis.
+
+---
+
+## 6. Achievements of the Project
+
+:::tip[Award & Recognition]
+Secured **1st Place** at the **MAKEFORHYDERABAD 2-Day Make-a-thon** (Titan Design Impact Movement) held at Symbiosis Institute of Technology (SIT), Hyderabad on May 15th & 16th, 2026, receiving a cash prize of **₹10,000** (awarded to Team SAFL-B).
+:::
+
+*   **Technical papers:** To be Published
+*   **Technical Reports:** To be Published
+*   **Commercial Applicability / Patent:** Under evaluation
+
+---
+
+## 7. Scope for Future Work
+
+The platform is designed to allow continuous enhancements in the following domains:
+
+*   **Full Autonomy:** Enhancing navigation with GPS, SLAM, and path-planning algorithms to enable completely autonomous field operations.
+*   **Robotic Arm Integration:** Adding a lightweight manipulator for tasks such as targeted weed removal, sample collection, or precision spraying.
+*   **Expanded Sensor Suite:** Incorporating advanced soil and crop health sensors (e.g., nutrient sensors, multispectral cameras) for more detailed environmental monitoring.
+*   **Dataset Growth & AI Improvement:** Training the convolutional neural network with larger, more diverse agricultural datasets to improve weed detection accuracy across different crops and regions.
+*   **Energy Optimization:** Exploring renewable power options such as solar charging and higher-capacity batteries for extended field deployment.
+*   **Scalability & Commercialization:** Refining the design for mass production with modular components, reducing cost while improving maintainability.
+*   **Multi-Robot Collaboration:** Developing swarm-based approaches where multiple units can coordinate tasks, increasing efficiency in large-scale farming.

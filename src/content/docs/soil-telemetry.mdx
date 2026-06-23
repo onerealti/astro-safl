@@ -1,0 +1,38 @@
+---
+title: Soil Probe Telemetry
+description: Amici Sense soil probe hardware integration, serial UART communication, level shifters setup, and field telemetry logging logs.
+---
+
+import { CardGrid, Card, Badge } from '@astrojs/starlight/components';
+
+This document compiles the hardware integration details and multi-trial field logs of the **Amici Sense** soil telemetry system integrated into the **Smart Agri Four Legged Bot**.
+
+---
+
+## 1. Soil Probe Telemetry Data
+
+The **Amici Sense** soil analysis system logs soil health parameters. Telemetries are parsed via Python on the NVIDIA Jetson Nano and combined with ML outputs in a local CSV file.
+
+### Telemetry Hardware Integration
+*   **Power Rail**: 5V rail stepped down via a DC-DC buck converter.
+*   **Data Bus**: Serial UART communication with Jetson Nano GPIO, utilizing level shifters to step 5V signals down to Jetson-safe 3.3V levels.
+*   **Response Time**: `< 5 seconds` per measurement cycle.
+
+---
+
+## 2. Field Logs (Three Consecutive Trials)
+
+Below is the telemetry dataset captured in-situ across three consecutive field trials:
+
+| Measured Parameter | Trial A | Trial B | Trial C | Average | Unit |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Soil Moisture** | 13.2 | 12.9 | 13.5 | **13.20** | % |
+| **Soil pH** | 6.3 | 6.2 | 6.4 | **6.30** | — |
+| **Electrical Conductivity (EC)**| 478 | 484 | 470 | **477.33** | µS/cm |
+| **Soil Temperature** | 33.4 | 33.8 | 33.1 | **33.43** | °C |
+| **Sunlight Intensity** | 30,800 | 31,200 | 32,100 | **31,366.67** | Lux |
+| **Air Humidity** | 55.4 | 56.1 | 54.7 | **55.40** | % RH |
+
+:::caution[Automated Sampling]
+The soil probe is automatically triggered to take readings when a stop command is issued following a confirmed weed classification. The combined payload of visual data and chemical soil telemetry is saved locally with timestamps for precision farming mapping.
+:::

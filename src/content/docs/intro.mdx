@@ -1,9 +1,11 @@
 ---
 title: System Introduction
 description: System introduction, objectives, and architecture overview of the Smart Agri Four Legged Bot.
+banner:
+  content: "🎉 SAFL-Bot R&D Project Completion Report (2024–2025) is now online!"
 ---
 
-import { CardGrid, Card, Tabs, TabItem } from '@astrojs/starlight/components';
+import { CardGrid, Card, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
 
 ## Project Abstract
 
@@ -19,9 +21,23 @@ The **Smart Agri Four Legged Bot** is a semi-autonomous agricultural robot desig
 </CardGrid>
 
 The robot is engineered around a hybrid fabrication approach:
-1. **Mechanical Substructure**: A robust, laser-cut 3mm mild steel chassis reinforced with bottom plates and connected to four articulated planar legs.
-2. **Electronics & Computing**: An **NVIDIA Jetson Nano** single-board computer acts as the central brain, handling visual input from an **Intel RealSense D435** depth camera and serial telemetry from an **Amici Sense** soil probe.
-3. **Actuation & Low-Level Control**: An **Arduino Due** manages low-level motor control, driving four planetary geared DC motors for shoulder articulation and two distal brushless hub motors for locomotion.
+
+<Steps>
+
+1. **Mechanical Substructure**
+
+   A robust, laser-cut 3mm mild steel chassis reinforced with bottom plates and connected to four articulated planar legs.
+
+2. **Electronics & Computing**
+
+   An **NVIDIA Jetson Nano** single-board computer acts as the central brain, handling visual input from an **Intel RealSense D435** depth camera and serial telemetry from an **Amici Sense** soil probe.
+
+3. **Actuation & Low-Level Control**
+
+   An **Arduino Due** manages low-level motor control, driving four planetary geared DC motors for shoulder articulation and two distal brushless hub motors for locomotion.
+
+</Steps>
+
 
 ---
 
@@ -80,9 +96,6 @@ graph TD
     Reg12V -->|12V Power| Drivers
     Direct24V -->|24V Power| ESCs
 `}</div>
-
-<script is:inline src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
-<script is:inline dangerouslySetInnerHTML={{ __html: "mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });" }}></script>
 
 ### Internal Layout CAD Detail
 
@@ -165,14 +178,32 @@ Each planar leg is engineered as a modular three-joint assembly (Hip, Knee, and 
 
 ## Key Hardware Summary
 
-| Component | Specification | Purpose |
-| :--- | :--- | :--- |
-| **NVIDIA Jetson Nano** | Embedded GPU computer (Ubuntu 18.04 + PyTorch) | Runs CNN weed detection, logs soil data, sends movement commands. |
-| **Arduino Due** | 32-bit ARM Cortex-M3 microcontroller (84 MHz) | Performs real-time low-level motor actuation and sync. |
-| **Intel RealSense D435** | RGB-D Active Infrared Stereo depth camera | Captures depth profiling and RGB frames for ML inference. |
-| **Amici Sense Probe** | Dual 180mm stainless steel probes | Measures soil moisture, pH, fertility, temperature, light, and humidity. |
-| **Geared DC Motors** | 4x planetary geared units | Drives shoulder joints for body height and pitch adjustments. |
-| **Brushless Hub Motors** | 2x 36V 350W direct-drive wheels | Distal foot units providing primary forward and reverse locomotion. |
+<CardGrid>
+  <Card title="NVIDIA Jetson Nano" icon="laptop">
+    * **Specification**: Embedded GPU computer (Ubuntu 18.04 + PyTorch)
+    * **Purpose**: Runs CNN weed detection, logs soil data, sends movement commands.
+  </Card>
+  <Card title="Arduino Due" icon="setting">
+    * **Specification**: 32-bit ARM Cortex-M3 microcontroller (84 MHz)
+    * **Purpose**: Performs real-time low-level motor actuation and sync.
+  </Card>
+  <Card title="Intel RealSense D435" icon="search">
+    * **Specification**: RGB-D Active Infrared Stereo depth camera
+    * **Purpose**: Captures depth profiling and RGB frames for ML inference.
+  </Card>
+  <Card title="Amici Sense Probe" icon="search">
+    * **Specification**: Dual 180mm stainless steel probes
+    * **Purpose**: Measures soil moisture, pH, fertility, temperature, light, and humidity.
+  </Card>
+  <Card title="Geared DC Motors" icon="setting">
+    * **Specification**: 4x planetary geared units
+    * **Purpose**: Drives shoulder joints for body height and pitch adjustments.
+  </Card>
+  <Card title="Brushless Hub Motors" icon="setting">
+    * **Specification**: 2x 36V 350W direct-drive wheels
+    * **Purpose**: Distal foot units providing primary forward and reverse locomotion.
+  </Card>
+</CardGrid>
 
 ---
 
