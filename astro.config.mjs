@@ -49,6 +49,15 @@ export default defineConfig({
                 tag: 'script',
                 content: "window.addEventListener('DOMContentLoaded', () => { if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' }); } });",
             },
+            {
+                tag: 'link',
+                attrs: {
+                    rel: 'help',
+                    type: 'text/plain',
+                    href: '/astro-safl/llms.txt',
+                    title: 'Documentation for LLMs',
+                },
+            },
         ],
         plugins: [
             starlightThemeBlack({
