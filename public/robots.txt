@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://onerealti.github.io/astro-safl/sitemap-index.xml
