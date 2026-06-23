@@ -7,6 +7,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 import { unified } from '@astrojs/markdown-remark';
+import starlightImageZoom from 'starlight-image-zoom';
 
 // https://astro.build/config
 export default defineConfig({
@@ -43,7 +44,7 @@ export default defineConfig({
                 content: "window.addEventListener('DOMContentLoaded', () => { if (window.mermaid) { mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' }); } });",
             },
         ],
-        plugins: [starlightBasePath()],
+        plugins: [starlightBasePath(), starlightImageZoom()],
         social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/onerealti/astro-safl' }],
         editLink: {
             baseUrl: 'https://github.com/onerealti/astro-safl/edit/main/',
