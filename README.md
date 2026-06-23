@@ -1,7 +1,7 @@
 # Smart Agri Four Legged Bot (S.A.F.L)
 
 <p align="center">
-  <img src="repository-open-graph-template.png" alt="S.A.F.L Logo" width="600"/>
+  <img src="src/assets/saflv2.png" alt="Smart Agri Four Legged Bot (S.A.F.L)" width="400"/>
 </p>
 
 <p align="center">
