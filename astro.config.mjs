@@ -9,6 +9,7 @@ import rehypeKatex from 'rehype-katex';
 import { unified } from '@astrojs/markdown-remark';
 import starlightImageZoom from 'starlight-image-zoom';
 import starlightThemeBlack from 'starlight-theme-black';
+import starlightLlmsTxt from 'starlight-llms-txt';
 
 // https://astro.build/config
 export default defineConfig({
@@ -60,6 +61,7 @@ export default defineConfig({
             }),
             starlightBasePath(),
             starlightImageZoom(),
+            starlightLlmsTxt(),
         ],
         social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/onerealti/astro-safl' }],
         editLink: {
