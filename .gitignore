@@ -19,3 +19,12 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Local raw source documents, drafts & receipts
+AgriML_77.md
+AgriML_77_images/
+Receipts/
+parse_receipts.py
+parsed_receipts.txt
+r-and-d-project-completion-form*.md
+repository-open-graph-template.png
