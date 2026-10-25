@@ -13,8 +13,7 @@ import starlightLlmsTxt from 'starlight-llms-txt';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://onerealti.github.io',
-    base: '/astro-safl',
+    site: 'https://safl.murtaza.rocks',
     trailingSlash: 'always',
     markdown: {
         processor: unified({
@@ -54,7 +53,7 @@ export default defineConfig({
                 attrs: {
                     rel: 'help',
                     type: 'text/plain',
-                    href: '/astro-safl/llms.txt',
+                    href: '/llms.txt',
                     title: 'Documentation for LLMs',
                 },
             },
